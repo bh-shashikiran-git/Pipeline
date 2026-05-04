@@ -1,0 +1,615 @@
+{
+  "created_at": "2026-05-04T11:11:00.957048Z",
+  "updated_at": "2026-05-04T11:11:00.957048Z",
+  "created_by": "kiran@bighammer.ai",
+  "updated_by": "kiran@bighammer.ai",
+  "is_deleted": false,
+  "deleted_by": null,
+  "tenant_id": 11,
+  "pipeline_id": 39,
+  "pipeline_name": "ref_provider_111",
+  "pipeline_key": "ref_provider_111",
+  "bh_project_id": 7,
+  "notes": null,
+  "tags": null,
+  "status": "active",
+  "pipeline_version_id": null,
+  "bh_project_name": "demo_proj",
+  "bh_github_username": "bh-shashikiran-git",
+  "pipeline_json": {
+    "name": "ref_provider_111",
+    "version": "1.0.0",
+    "engine_type": "pyspark",
+    "parameters": [],
+    "connections": {
+      "landing_ref_provider_file_connection": {
+        "name": "landing_ref_provider_file_connection",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22"
+      },
+      "bronze_ref_provider_db_connection": {
+        "name": "bronze_ref_provider_db_connection",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "bronze_referance_data",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22"
+      }
+    },
+    "sources": {
+      "landing_source_ref_provider": {
+        "name": "landing_source_ref_provider",
+        "source_type": "File",
+        "file_name": "bhargs/6-Reference Data/Provider.csv",
+        "connection": {
+          "$ref": "#/connections/landing_ref_provider_file_connection"
+        }
+      }
+    },
+    "targets": {
+      "bronze_target_ref_provider": {
+        "name": "bronze_target_ref_provider",
+        "target_type": "Relational",
+        "table_name": "ref_provider",
+        "connection": {
+          "$ref": "#/connections/bronze_ref_provider_db_connection"
+        },
+        "load_mode": "append",
+        "schema": "bronze_referance_data"
+      }
+    },
+    "transformations": [
+      {
+        "name": "landing_read_ref_provider",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_ref_provider"
+        },
+        "file_type": "CSV",
+        "read_options": {
+          "fetch_size": 10000,
+          "sep": ",",
+          "encoding": "UTF-8",
+          "header": true,
+          "inferSchema": false,
+          "multiLine": false,
+          "quote": "\"",
+          "escape": "\\",
+          "comment": "",
+          "preferDate": true,
+          "enforceSchema": true,
+          "ignoreLeadingWhiteSpace": false,
+          "ignoreTrailingWhiteSpace": false,
+          "nullValue": "",
+          "nanValue": "NaN",
+          "positiveInf": "Inf",
+          "negativeInf": "-Inf",
+          "dateFormat": "yyyy-MM-dd",
+          "timestampFormat": "yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]",
+          "timestampNTZFormat": "yyyy-MM-dd'T'HH:mm:ss[.SSS]",
+          "maxColumns": 20480,
+          "maxCharsPerColumn": -1,
+          "columnNameOfCorruptRecord": "_corrupt_record",
+          "samplingRatio": 1.0,
+          "emptyValue": "",
+          "locale": "en-US",
+          "lineSep": "\n",
+          "unescapedQuoteHandling": "STOP_AT_DELIMITER",
+          "mode": "PERMISSIVE"
+        },
+        "schema": [
+          {
+            "name": "ID",
+            "type": "long",
+            "nullable": false
+          },
+          {
+            "name": "NPI",
+            "type": "long",
+            "nullable": false
+          },
+          {
+            "name": "Entity_Type",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prctc_Org_Name",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Creds",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Prefix",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_FName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_MName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_LName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Gender",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_Title",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_Creds",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_Prefix",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_FName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_MName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_LName",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Authrzd_Person_Telephone",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Address1",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Address2",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "City",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "State",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Postal_Code",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "Country_Code",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Telephone",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Fax",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Address1",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Address2",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_City",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_State",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Postal_Code",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Country_Code",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Telephone",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_Fax",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_1",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_2",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_3",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_4",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_5",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_6",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_7",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_8",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_9",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_10",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_11",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_12",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_13",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_14",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HlthcrPrvdr_Txnmy_Cd_15",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Sole_Proprietor",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Organization_Subpart",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Parent_Org_LBN",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Parent_Org_TIN",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Emp_Idtfction_Number",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Certfctn_Date",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "NPI_Deactivation_Reason",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "NPI_Deactivation_Date",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Replacement_NPI",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "NPI_Reactivation_Date",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Enumeration_Date",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "Last_Update_Date",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "ZIP",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "Mailing_ZIP",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "YYYYMM",
+            "type": "long",
+            "nullable": false
+          },
+          {
+            "name": "ZIP_STD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CITY_STD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "STATE_STD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "COUNTY_STD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "POPULATION_CENTER_LATITUDE",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "POPULATION_CENTER_LONGITUDE",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Taxonomy_Code",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Provider_Clssfctn_Speclization",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Clsfctn_Hier1",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Clsfctn_Hier2",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Clsfctn_Hier3",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Prvdr_Clsfctn_Hier4",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "_corrupt_record",
+            "type": "string",
+            "nullable": true
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_ref_provider"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'ref_provider'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "dataset_id": "schema_drift_ref_provider",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_ref_provider",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_ref_provider"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      }
+    ],
+    "description": "Cloned from File to DB Ingestion V2",
+    "batch_control": {
+      "enabled": true,
+      "feed_name": "ref_provider",
+      "business_date": "2026-05-04",
+      "delivery_id": "ref_provider_2026-05-04",
+      "batch_id": 1,
+      "use_existing_batch_id": false,
+      "validate_existing_batch": true,
+      "require_input_acceptance": true,
+      "auto_accept_input_on_batch_init": true,
+      "input_registry_processed_on_stage": "bronze",
+      "seed_stage_rows": true,
+      "stages": [
+        "bronze"
+      ],
+      "storage": {
+        "connection": {
+          "name": "control_delta",
+          "connection_type": "DatabricksDeltaLake"
+        },
+        "namespace": {
+          "catalog": "main",
+          "schema": "control"
+        }
+      },
+      "stage_to_transformations": {
+        "bronze": [
+          "landing_read_ref_provider",
+          "add_lineage_metadata",
+          "schema_drift_guard",
+          "bronze_write_ref_provider"
+        ]
+      },
+      "error_threshold_pct": 50.0
+    }
+  },
+  "pipeline_type": "design",
+  "engine_type": "pyspark",
+  "total_test_scenario": null,
+  "passed_test": null,
+  "failed_test": null,
+  "sme_recommendations_count": null,
+  "process_status": null,
+  "pipeline_parameters": []
+}
