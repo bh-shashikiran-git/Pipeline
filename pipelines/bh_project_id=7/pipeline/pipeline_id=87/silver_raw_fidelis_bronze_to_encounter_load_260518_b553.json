@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-05-18T10:55:23.368190Z",
+  "updated_at": "2026-05-18T10:55:23.368190Z",
+  "created_by": "kiran@bighammer.ai",
+  "updated_by": "kiran@bighammer.ai",
+  "is_deleted": false,
+  "deleted_by": null,
+  "tenant_id": 11,
+  "pipeline_id": 87,
+  "pipeline_name": "silver_raw_fidelis_bronze_to_encounter_load_260518_b553",
+  "pipeline_key": "silver_raw_fidelis_bronze_to_encounter_load_260518_b553",
+  "bh_project_id": 7,
+  "notes": "",
+  "tags": {
+    "data_domain_id": 89,
+    "data_domain_name": "ADT (Admission, Discharge, Transfer)",
+    "source_count": 2,
+    "target_count": 3
+  },
+  "status": "active",
+  "pipeline_version_id": null,
+  "bh_project_name": "demo_proj",
+  "bh_github_username": "bh-shashikiran-git",
+  "pipeline_json": {
+    "data_domain_id": 89,
+    "data_domain_name": "ADT (Admission, Discharge, Transfer)",
+    "ingestion_group_id": 217,
+    "source_rows": [
+      {
+        "data_src_id": 661,
+        "ingest_object_id": null,
+        "label": "fedelis_ip_upstate_3_iw4fv \u00b7 bronze_adt.fedelis_ip_upstate_3"
+      },
+      {
+        "data_src_id": 659,
+        "ingest_object_id": null,
+        "label": "fedelis_ip_downstate_3_w39ar \u00b7 bronze_adt.fedelis_ip_downstate_3"
+      }
+    ],
+    "target_rows": [
+      {
+        "data_src_id": 664,
+        "label": "encounter_location_history \u00b7 silverraw_adt.encounter_location_history"
+      },
+      {
+        "data_src_id": 663,
+        "label": "encounter_cinq_ext \u00b7 silverraw_adt.encounter_cinq_ext"
+      },
+      {
+        "data_src_id": 662,
+        "label": "encounter \u00b7 silverraw_adt.encounter"
+      }
+    ]
+  },
+  "pipeline_type": "requirement",
+  "engine_type": "pyspark",
+  "total_test_scenario": null,
+  "passed_test": null,
+  "failed_test": null,
+  "sme_recommendations_count": null,
+  "process_status": null,
+  "pipeline_parameters": []
+}
