@@ -1,6 +1,6 @@
 {
   "created_at": "2026-05-20T13:28:35.596085Z",
-  "updated_at": "2026-05-20T14:02:38.846498Z",
+  "updated_at": "2026-05-20T14:06:01.671683Z",
   "created_by": "kiran@bighammer.ai",
   "updated_by": "kiran@bighammer.ai",
   "is_deleted": false,
@@ -6416,7 +6416,7 @@
       "atomic_commit_enabled": true,
       "group_id": 226,
       "expected_group_members": 11,
-      "group_run_id": "cclf_20260520T140238Z"
+      "group_run_id": "cclf_20260520T140601Z"
     }
   },
   "pipeline_type": "design",
