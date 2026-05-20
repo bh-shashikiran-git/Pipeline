@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-05-20T13:35:55.283932Z",
+  "updated_at": "2026-05-20T13:35:55.283932Z",
+  "created_by": "kiran@bighammer.ai",
+  "updated_by": "kiran@bighammer.ai",
+  "is_deleted": false,
+  "deleted_by": null,
+  "tenant_id": 11,
+  "pipeline_id": 100,
+  "pipeline_name": "silver_raw_cclf_bronze_to_silver_raw_load_260520_596f",
+  "pipeline_key": "silver_raw_cclf_bronze_to_silver_raw_load_260520_596f",
+  "bh_project_id": 7,
+  "notes": "",
+  "tags": {
+    "data_domain_id": 89,
+    "data_domain_name": "ADT (Admission, Discharge, Transfer)",
+    "source_count": 11,
+    "target_count": 10
+  },
+  "status": "active",
+  "pipeline_version_id": null,
+  "bh_project_name": "demo_proj",
+  "bh_github_username": "bh-shashikiran-git",
+  "pipeline_json": {
+    "data_domain_id": 89,
+    "data_domain_name": "ADT (Admission, Discharge, Transfer)",
+    "ingestion_group_id": 226,
+    "source_rows": [
+      {
+        "data_src_id": 749,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zcby26_d260501 \u00b7 default.p_d0284_aco_zcby26_d260501"
+      },
+      {
+        "data_src_id": 747,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zcay26_d260501 \u00b7 default.p_d0284_aco_zcay26_d260501"
+      },
+      {
+        "data_src_id": 745,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc9y26_d260501 \u00b7 default.p_d0284_aco_zc9y26_d260501"
+      },
+      {
+        "data_src_id": 743,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc8y26_d260501 \u00b7 default.p_d0284_aco_zc8y26_d260501"
+      },
+      {
+        "data_src_id": 741,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc7y26_d260501 \u00b7 default.p_d0284_aco_zc7y26_d260501"
+      },
+      {
+        "data_src_id": 739,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc6y26_d260501 \u00b7 default.p_d0284_aco_zc6y26_d260501"
+      },
+      {
+        "data_src_id": 737,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc5y26_d260501 \u00b7 default.p_d0284_aco_zc5y26_d260501"
+      },
+      {
+        "data_src_id": 735,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc4y26_d260501 \u00b7 default.p_d0284_aco_zc4y26_d260501"
+      },
+      {
+        "data_src_id": 733,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc3y26_d260501 \u00b7 default.p_d0284_aco_zc3y26_d260501"
+      },
+      {
+        "data_src_id": 731,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc2y26_d260501 \u00b7 default.p_d0284_aco_zc2y26_d260501"
+      },
+      {
+        "data_src_id": 729,
+        "ingest_object_id": null,
+        "label": "p_d0284_aco_zc1y26_d260501 \u00b7 default.p_d0284_aco_zc1y26_d260501"
+      }
+    ],
+    "target_rows": [
+      {
+        "data_src_id": 727,
+        "label": "pharmacy_claim_line \u00b7 cclf_silver_raw.pharmacy_claim_line"
+      },
+      {
+        "data_src_id": 726,
+        "label": "pharmacy_claim_header \u00b7 cclf_silver_raw.pharmacy_claim_header"
+      },
+      {
+        "data_src_id": 725,
+        "label": "patient \u00b7 cclf_silver_raw.patient"
+      },
+      {
+        "data_src_id": 724,
+        "label": "claim_provider \u00b7 cclf_silver_raw.claim_provider"
+      },
+      {
+        "data_src_id": 723,
+        "label": "claim_procedure \u00b7 cclf_silver_raw.claim_procedure"
+      },
+      {
+        "data_src_id": 722,
+        "label": "claim_line_adjudication \u00b7 cclf_silver_raw.claim_line_adjudication"
+      },
+      {
+        "data_src_id": 721,
+        "label": "claim_line \u00b7 cclf_silver_raw.claim_line"
+      },
+      {
+        "data_src_id": 720,
+        "label": "claim_header \u00b7 cclf_silver_raw.claim_header"
+      },
+      {
+        "data_src_id": 719,
+        "label": "claim_diagnosis \u00b7 cclf_silver_raw.claim_diagnosis"
+      },
+      {
+        "data_src_id": 718,
+        "label": "claim_adjudication \u00b7 cclf_silver_raw.claim_adjudication"
+      }
+    ]
+  },
+  "pipeline_type": "requirement",
+  "engine_type": "pyspark",
+  "total_test_scenario": null,
+  "passed_test": null,
+  "failed_test": null,
+  "sme_recommendations_count": null,
+  "process_status": null,
+  "pipeline_parameters": []
+}
