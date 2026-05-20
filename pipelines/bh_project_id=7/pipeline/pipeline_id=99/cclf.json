@@ -1,0 +1,6430 @@
+{
+  "created_at": "2026-05-20T13:28:35.596085Z",
+  "updated_at": "2026-05-20T14:02:38.846498Z",
+  "created_by": "kiran@bighammer.ai",
+  "updated_by": "kiran@bighammer.ai",
+  "is_deleted": false,
+  "deleted_by": null,
+  "tenant_id": 11,
+  "pipeline_id": 99,
+  "pipeline_name": "cclf",
+  "pipeline_key": "cclf",
+  "bh_project_id": 7,
+  "notes": null,
+  "tags": null,
+  "status": "active",
+  "pipeline_version_id": null,
+  "bh_project_name": "demo_proj",
+  "bh_github_username": "bh-shashikiran-git",
+  "pipeline_json": {
+    "name": "cclf",
+    "version": "1.0.0",
+    "engine_type": "pyspark",
+    "parameters": [
+      {
+        "key": "p_d0284_aco_zc2y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC2Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc4y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC4Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc6y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC6Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc8y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC8Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zcay26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZCAY26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc1y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC1Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc3y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC3Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc5y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC5Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc7y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC7Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zc9y26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZC9Y26.D260501.dat"
+      },
+      {
+        "key": "p_d0284_aco_zcby26_d260501",
+        "value": "D0284_cclf/P.D0284.ACO.ZCBY26.D260501.dat"
+      }
+    ],
+    "connections": {
+      "landing_p_d0284_aco_zc2y26_d260501_file_connection_obj411": {
+        "name": "landing_p_d0284_aco_zc2y26_d260501_file_connection_obj411",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc2y26_d260501_db_connection_obj411": {
+        "name": "bronze_p_d0284_aco_zc2y26_d260501_db_connection_obj411",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc4y26_d260501_file_connection_obj413": {
+        "name": "landing_p_d0284_aco_zc4y26_d260501_file_connection_obj413",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc4y26_d260501_db_connection_obj413": {
+        "name": "bronze_p_d0284_aco_zc4y26_d260501_db_connection_obj413",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc6y26_d260501_file_connection_obj415": {
+        "name": "landing_p_d0284_aco_zc6y26_d260501_file_connection_obj415",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc6y26_d260501_db_connection_obj415": {
+        "name": "bronze_p_d0284_aco_zc6y26_d260501_db_connection_obj415",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc8y26_d260501_file_connection_obj417": {
+        "name": "landing_p_d0284_aco_zc8y26_d260501_file_connection_obj417",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc8y26_d260501_db_connection_obj417": {
+        "name": "bronze_p_d0284_aco_zc8y26_d260501_db_connection_obj417",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zcay26_d260501_file_connection_obj419": {
+        "name": "landing_p_d0284_aco_zcay26_d260501_file_connection_obj419",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zcay26_d260501_db_connection_obj419": {
+        "name": "bronze_p_d0284_aco_zcay26_d260501_db_connection_obj419",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc1y26_d260501_file_connection_obj410": {
+        "name": "landing_p_d0284_aco_zc1y26_d260501_file_connection_obj410",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc1y26_d260501_db_connection_obj410": {
+        "name": "bronze_p_d0284_aco_zc1y26_d260501_db_connection_obj410",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc3y26_d260501_file_connection_obj412": {
+        "name": "landing_p_d0284_aco_zc3y26_d260501_file_connection_obj412",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc3y26_d260501_db_connection_obj412": {
+        "name": "bronze_p_d0284_aco_zc3y26_d260501_db_connection_obj412",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc5y26_d260501_file_connection_obj414": {
+        "name": "landing_p_d0284_aco_zc5y26_d260501_file_connection_obj414",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc5y26_d260501_db_connection_obj414": {
+        "name": "bronze_p_d0284_aco_zc5y26_d260501_db_connection_obj414",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc7y26_d260501_file_connection_obj416": {
+        "name": "landing_p_d0284_aco_zc7y26_d260501_file_connection_obj416",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc7y26_d260501_db_connection_obj416": {
+        "name": "bronze_p_d0284_aco_zc7y26_d260501_db_connection_obj416",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zc9y26_d260501_file_connection_obj418": {
+        "name": "landing_p_d0284_aco_zc9y26_d260501_file_connection_obj418",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zc9y26_d260501_db_connection_obj418": {
+        "name": "bronze_p_d0284_aco_zc9y26_d260501_db_connection_obj418",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      },
+      "landing_p_d0284_aco_zcby26_d260501_file_connection_obj420": {
+        "name": "landing_p_d0284_aco_zcby26_d260501_file_connection_obj420",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_p_d0284_aco_zcby26_d260501_db_connection_obj420": {
+        "name": "bronze_p_d0284_aco_zcby26_d260501_db_connection_obj420",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
+      }
+    },
+    "sources": {
+      "landing_source_p_d0284_aco_zc2y26_d260501_obj411": {
+        "name": "landing_source_p_d0284_aco_zc2y26_d260501_obj411",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc2y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc2y26_d260501_file_connection_obj411"
+        },
+        "data_src_id": 730
+      },
+      "landing_source_p_d0284_aco_zc4y26_d260501_obj413": {
+        "name": "landing_source_p_d0284_aco_zc4y26_d260501_obj413",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc4y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc4y26_d260501_file_connection_obj413"
+        },
+        "data_src_id": 734
+      },
+      "landing_source_p_d0284_aco_zc6y26_d260501_obj415": {
+        "name": "landing_source_p_d0284_aco_zc6y26_d260501_obj415",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc6y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc6y26_d260501_file_connection_obj415"
+        },
+        "data_src_id": 738
+      },
+      "landing_source_p_d0284_aco_zc8y26_d260501_obj417": {
+        "name": "landing_source_p_d0284_aco_zc8y26_d260501_obj417",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc8y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc8y26_d260501_file_connection_obj417"
+        },
+        "data_src_id": 742
+      },
+      "landing_source_p_d0284_aco_zcay26_d260501_obj419": {
+        "name": "landing_source_p_d0284_aco_zcay26_d260501_obj419",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zcay26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zcay26_d260501_file_connection_obj419"
+        },
+        "data_src_id": 746
+      },
+      "landing_source_p_d0284_aco_zc1y26_d260501_obj410": {
+        "name": "landing_source_p_d0284_aco_zc1y26_d260501_obj410",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc1y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc1y26_d260501_file_connection_obj410"
+        },
+        "data_src_id": 728
+      },
+      "landing_source_p_d0284_aco_zc3y26_d260501_obj412": {
+        "name": "landing_source_p_d0284_aco_zc3y26_d260501_obj412",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc3y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc3y26_d260501_file_connection_obj412"
+        },
+        "data_src_id": 732
+      },
+      "landing_source_p_d0284_aco_zc5y26_d260501_obj414": {
+        "name": "landing_source_p_d0284_aco_zc5y26_d260501_obj414",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc5y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc5y26_d260501_file_connection_obj414"
+        },
+        "data_src_id": 736
+      },
+      "landing_source_p_d0284_aco_zc7y26_d260501_obj416": {
+        "name": "landing_source_p_d0284_aco_zc7y26_d260501_obj416",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc7y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc7y26_d260501_file_connection_obj416"
+        },
+        "data_src_id": 740
+      },
+      "landing_source_p_d0284_aco_zc9y26_d260501_obj418": {
+        "name": "landing_source_p_d0284_aco_zc9y26_d260501_obj418",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zc9y26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zc9y26_d260501_file_connection_obj418"
+        },
+        "data_src_id": 744
+      },
+      "landing_source_p_d0284_aco_zcby26_d260501_obj420": {
+        "name": "landing_source_p_d0284_aco_zcby26_d260501_obj420",
+        "source_type": "File",
+        "file_name": "${p_d0284_aco_zcby26_d260501}",
+        "connection": {
+          "$ref": "#/connections/landing_p_d0284_aco_zcby26_d260501_file_connection_obj420"
+        },
+        "data_src_id": 748
+      }
+    },
+    "targets": {
+      "bronze_target_p_d0284_aco_zc2y26_d260501_obj411": {
+        "name": "bronze_target_p_d0284_aco_zc2y26_d260501_obj411",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc2y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc2y26_d260501_db_connection_obj411"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 731
+      },
+      "bronze_target_p_d0284_aco_zc4y26_d260501_obj413": {
+        "name": "bronze_target_p_d0284_aco_zc4y26_d260501_obj413",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc4y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc4y26_d260501_db_connection_obj413"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 735
+      },
+      "bronze_target_p_d0284_aco_zc6y26_d260501_obj415": {
+        "name": "bronze_target_p_d0284_aco_zc6y26_d260501_obj415",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc6y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc6y26_d260501_db_connection_obj415"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 739
+      },
+      "bronze_target_p_d0284_aco_zc8y26_d260501_obj417": {
+        "name": "bronze_target_p_d0284_aco_zc8y26_d260501_obj417",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc8y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc8y26_d260501_db_connection_obj417"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 743
+      },
+      "bronze_target_p_d0284_aco_zcay26_d260501_obj419": {
+        "name": "bronze_target_p_d0284_aco_zcay26_d260501_obj419",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zcay26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zcay26_d260501_db_connection_obj419"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 747
+      },
+      "bronze_target_p_d0284_aco_zc1y26_d260501_obj410": {
+        "name": "bronze_target_p_d0284_aco_zc1y26_d260501_obj410",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc1y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc1y26_d260501_db_connection_obj410"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 729
+      },
+      "bronze_target_p_d0284_aco_zc3y26_d260501_obj412": {
+        "name": "bronze_target_p_d0284_aco_zc3y26_d260501_obj412",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc3y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc3y26_d260501_db_connection_obj412"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 733
+      },
+      "bronze_target_p_d0284_aco_zc5y26_d260501_obj414": {
+        "name": "bronze_target_p_d0284_aco_zc5y26_d260501_obj414",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc5y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc5y26_d260501_db_connection_obj414"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 737
+      },
+      "bronze_target_p_d0284_aco_zc7y26_d260501_obj416": {
+        "name": "bronze_target_p_d0284_aco_zc7y26_d260501_obj416",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc7y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc7y26_d260501_db_connection_obj416"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 741
+      },
+      "bronze_target_p_d0284_aco_zc9y26_d260501_obj418": {
+        "name": "bronze_target_p_d0284_aco_zc9y26_d260501_obj418",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zc9y26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zc9y26_d260501_db_connection_obj418"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 745
+      },
+      "bronze_target_p_d0284_aco_zcby26_d260501_obj420": {
+        "name": "bronze_target_p_d0284_aco_zcby26_d260501_obj420",
+        "target_type": "Relational",
+        "table_name": "p_d0284_aco_zcby26_d260501",
+        "connection": {
+          "$ref": "#/connections/bronze_p_d0284_aco_zcby26_d260501_db_connection_obj420"
+        },
+        "load_mode": "append",
+        "schema": "default",
+        "data_src_id": 749
+      }
+    },
+    "transformations": [
+      {
+        "name": "landing_read_p_d0284_aco_zc2y26_d260501_obj411",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc2y26_d260501_obj411"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              23
+            ],
+            [
+              23,
+              34
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              67,
+              71
+            ],
+            [
+              86,
+              97
+            ],
+            [
+              97,
+              103
+            ],
+            [
+              123,
+              147
+            ],
+            [
+              147,
+              164
+            ],
+            [
+              164,
+              166
+            ],
+            [
+              166,
+              168
+            ],
+            [
+              168,
+              170
+            ],
+            [
+              170,
+              172
+            ],
+            [
+              172,
+              174
+            ],
+            [
+              174,
+              179
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "CLM_LINE_NUM",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_LINE_PROD_REV_CTR_CD",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "PRVDR_OSCAR_NUM",
+            "CLM_LINE_SRVC_UNIT_QTY",
+            "CLM_LINE_CVRD_PD_AMT",
+            "HCPCS_1_MDFR_CD",
+            "HCPCS_2_MDFR_CD",
+            "HCPCS_3_MDFR_CD",
+            "HCPCS_4_MDFR_CD",
+            "HCPCS_5_MDFR_CD",
+            "CLM_REV_APC_HIPPS_CD"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_PROD_REV_CTR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_REV_APC_HIPPS_CD",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj411",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc2y26_d260501_obj411"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj411",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj411"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_PROD_REV_CTR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_REV_APC_HIPPS_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc2y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc2y26_d260501_obj411",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj411"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc2y26_d260501_obj411"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc4y26_d260501_obj413",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc4y26_d260501_obj413"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              24,
+              35
+            ],
+            [
+              35,
+              37
+            ],
+            [
+              37,
+              38
+            ],
+            [
+              38,
+              40
+            ],
+            [
+              40,
+              47
+            ],
+            [
+              47,
+              58
+            ],
+            [
+              58,
+              64
+            ],
+            [
+              64,
+              74
+            ],
+            [
+              74,
+              84
+            ],
+            [
+              84,
+              91
+            ],
+            [
+              91,
+              92
+            ],
+            [
+              92,
+              104
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_PROD_TYPE_CD",
+            "CLM_VAL_SQNC_NUM",
+            "CLM_DGNS_CD",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "PRVDR_OSCAR_NUM",
+            "CLM_FROM_DT",
+            "CLM_THRU_DT",
+            "CLM_POA_IND",
+            "DGNS_PRCDR_ICD_IND",
+            "CLM_BLG_PRVDR_OSCAR_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PROD_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_CD",
+            "type": "string"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string"
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_POA_IND",
+            "type": "string"
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string"
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj413",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc4y26_d260501_obj413"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj413",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj413"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PROD_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_POA_IND",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc4y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc4y26_d260501_obj413",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj413"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc4y26_d260501_obj413"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc6y26_d260501_obj415",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc6y26_d260501_obj415"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              23
+            ],
+            [
+              23,
+              34
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              45,
+              47
+            ],
+            [
+              47,
+              57
+            ],
+            [
+              57,
+              67
+            ],
+            [
+              67,
+              68
+            ],
+            [
+              68,
+              70
+            ],
+            [
+              70,
+              80
+            ],
+            [
+              80,
+              90
+            ],
+            [
+              90,
+              95
+            ],
+            [
+              95,
+              110
+            ],
+            [
+              110,
+              111
+            ],
+            [
+              111,
+              121
+            ],
+            [
+              121,
+              131
+            ],
+            [
+              131,
+              133
+            ],
+            [
+              133,
+              135
+            ],
+            [
+              135,
+              137
+            ],
+            [
+              137,
+              147
+            ],
+            [
+              147,
+              157
+            ],
+            [
+              157,
+              197
+            ],
+            [
+              197,
+              208
+            ],
+            [
+              208,
+              225
+            ],
+            [
+              225,
+              227
+            ],
+            [
+              227,
+              237
+            ],
+            [
+              237,
+              247
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "CLM_LINE_NUM",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_FROM_DT",
+            "CLM_THRU_DT",
+            "CLM_FED_TYPE_SRVC_CD",
+            "CLM_POS_CD",
+            "CLM_LINE_FROM_DT",
+            "CLM_LINE_THRU_DT",
+            "CLM_LINE_HCPCS_CD",
+            "CLM_LINE_CVRD_PD_AMT",
+            "CLM_PRMRY_PYR_CD",
+            "PAYTO_PRVDR_NPI_NUM",
+            "ORDRG_PRVDR_NPI_NUM",
+            "CLM_CARR_PMT_DNL_CD",
+            "CLM_PRCSG_IND_CD",
+            "CLM_ADJSMT_TYPE_CD",
+            "CLM_EFCTV_DT",
+            "CLM_IDR_LD_DT",
+            "CLM_CNTL_NUM",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "CLM_LINE_ALOWD_CHRG_AMT",
+            "CLM_DISP_CD",
+            "CLM_BLG_PRVDR_NPI_NUM",
+            "CLM_RFRG_PRVDR_NPI_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PRMRY_PYR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "PAYTO_PRVDR_NPI_NUM",
+            "type": "string"
+          },
+          {
+            "name": "ORDRG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date"
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj415",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc6y26_d260501_obj415"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj415",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj415"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PAYTO_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "ORDRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc6y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc6y26_d260501_obj415",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj415"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc6y26_d260501_obj415"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc8y26_d260501_obj417",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc8y26_d260501_obj417"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              12
+            ],
+            [
+              11,
+              22
+            ],
+            [
+              22,
+              24
+            ],
+            [
+              24,
+              27
+            ],
+            [
+              27,
+              32
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              42,
+              43
+            ],
+            [
+              43,
+              44
+            ],
+            [
+              44,
+              47
+            ],
+            [
+              47,
+              49
+            ],
+            [
+              49,
+              51
+            ],
+            [
+              51,
+              61
+            ],
+            [
+              61,
+              71
+            ],
+            [
+              71,
+              81
+            ],
+            [
+              81,
+              111
+            ],
+            [
+              111,
+              126
+            ],
+            [
+              126,
+              166
+            ],
+            [
+              166,
+              167
+            ],
+            [
+              167,
+              168
+            ],
+            [
+              168,
+              178
+            ],
+            [
+              178,
+              188
+            ],
+            [
+              188,
+              233
+            ],
+            [
+              233,
+              278
+            ],
+            [
+              278,
+              318
+            ],
+            [
+              318,
+              358
+            ],
+            [
+              358,
+              398
+            ],
+            [
+              398,
+              438
+            ],
+            [
+              438,
+              538
+            ],
+            [
+              538,
+              540
+            ],
+            [
+              540,
+              545
+            ],
+            [
+              545,
+              549
+            ]
+          ],
+          "columnNames": [
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "BENE_FIPS_STATE_CD",
+            "BENE_FIPS_CNTY_CD",
+            "BENE_ZIP_CD",
+            "BENE_DOB",
+            "BENE_SEX_CD",
+            "BENE_RACE_CD",
+            "BENE_AGE",
+            "BENE_MDCR_STUS_CD",
+            "BENE_DUAL_STUS_CD",
+            "BENE_DEATH_DT",
+            "BENE_RNG_BGN_DT",
+            "BENE_RNG_END_DT",
+            "BENE_1ST_NAME",
+            "BENE_MIDL_NAME",
+            "BENE_LAST_NAME",
+            "BENE_ORGNL_ENTLMT_RSN_CD",
+            "BENE_ENTLMT_BUYIN_IND",
+            "BENE_PART_A_ENRLMT_BGN_DT",
+            "BENE_PART_B_ENRLMT_BGN_DT",
+            "BENE_LINE_1_ADR",
+            "BENE_LINE_2_ADR",
+            "BENE_LINE_3_ADR",
+            "BENE_LINE_4_ADR",
+            "BENE_LINE_5_ADR",
+            "BENE_LINE_6_ADR",
+            "GEO_ZIP_PLC_NAME",
+            "GEO_USPS_STATE_CD",
+            "GEO_ZIP5_CD",
+            "GEO_ZIP4_CD"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_FIPS_STATE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_FIPS_CNTY_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_ZIP_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_DOB",
+            "type": "string"
+          },
+          {
+            "name": "BENE_SEX_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_RACE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_AGE",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_MDCR_STUS_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_DUAL_STUS_CD",
+            "type": "string"
+          },
+          {
+            "name": "BENE_DEATH_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_RNG_BGN_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_RNG_END_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_1ST_NAME",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MIDL_NAME",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LAST_NAME",
+            "type": "string"
+          },
+          {
+            "name": "BENE_ORGNL_ENTLMT_RSN_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_ENTLMT_BUYIN_IND",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_PART_A_ENRLMT_BGN_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_PART_B_ENRLMT_BGN_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_1_ADR",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_2_ADR",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_3_ADR",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_4_ADR",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_5_ADR",
+            "type": "string"
+          },
+          {
+            "name": "BENE_LINE_6_ADR",
+            "type": "string"
+          },
+          {
+            "name": "GEO_ZIP_PLC_NAME",
+            "type": "string"
+          },
+          {
+            "name": "GEO_USPS_STATE_CD",
+            "type": "string"
+          },
+          {
+            "name": "GEO_ZIP5_CD",
+            "type": "string"
+          },
+          {
+            "name": "GEO_ZIP4_CD",
+            "type": "string"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj417",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc8y26_d260501_obj417"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj417",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj417"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_FIPS_STATE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_FIPS_CNTY_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_ZIP_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_DOB",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_SEX_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_RACE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_AGE",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MDCR_STUS_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_DUAL_STUS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_DEATH_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_RNG_BGN_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_RNG_END_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_1ST_NAME",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MIDL_NAME",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LAST_NAME",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_ORGNL_ENTLMT_RSN_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_ENTLMT_BUYIN_IND",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_PART_A_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_PART_B_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_1_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_2_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_3_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_4_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_5_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_LINE_6_ADR",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "GEO_ZIP_PLC_NAME",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "GEO_USPS_STATE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "GEO_ZIP5_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "GEO_ZIP4_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc8y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc8y26_d260501_obj417",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj417"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc8y26_d260501_obj417"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zcay26_d260501_obj419",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zcay26_d260501_obj419"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              24,
+              35
+            ],
+            [
+              35,
+              37
+            ],
+            [
+              37,
+              47
+            ],
+            [
+              47,
+              48
+            ],
+            [
+              48,
+              49
+            ],
+            [
+              49,
+              50
+            ],
+            [
+              50,
+              51
+            ],
+            [
+              51,
+              52
+            ],
+            [
+              52,
+              54
+            ],
+            [
+              54,
+              56
+            ],
+            [
+              56,
+              58
+            ],
+            [
+              58,
+              60
+            ],
+            [
+              60,
+              62
+            ],
+            [
+              62,
+              81
+            ],
+            [
+              81,
+              100
+            ],
+            [
+              100,
+              101
+            ],
+            [
+              101,
+              120
+            ],
+            [
+              120,
+              135
+            ],
+            [
+              135,
+              154
+            ],
+            [
+              154,
+              169
+            ],
+            [
+              169,
+              184
+            ],
+            [
+              184,
+              203
+            ],
+            [
+              203,
+              222
+            ],
+            [
+              222,
+              224
+            ],
+            [
+              224,
+              243
+            ],
+            [
+              243,
+              262
+            ],
+            [
+              262,
+              281
+            ],
+            [
+              281,
+              300
+            ],
+            [
+              300,
+              303
+            ],
+            [
+              303,
+              305
+            ],
+            [
+              305,
+              324
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_ACTV_CARE_FROM_DT",
+            "CLM_NGACO_PBPMT_SW",
+            "CLM_NGACO_PDSCHRG_HCBS_SW",
+            "CLM_NGACO_SNF_WVR_SW",
+            "CLM_NGACO_TLHLTH_SW",
+            "CLM_NGACO_CPTATN_SW",
+            "CLM_DEMO_1ST_NUM",
+            "CLM_DEMO_2ND_NUM",
+            "CLM_DEMO_3RD_NUM",
+            "CLM_DEMO_4TH_NUM",
+            "CLM_DEMO_5TH_NUM",
+            "CLM_PBP_INCLSN_AMT",
+            "CLM_PBP_RDCTN_AMT",
+            "CLM_NGACO_CMG_WVR_SW",
+            "CLM_INSTNL_PER_DIEM_AMT",
+            "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+            "CLM_MDCR_COINSRNC_AMT",
+            "CLM_BLOOD_LBLTY_AMT",
+            "CLM_INSTNL_PRFNL_AMT",
+            "CLM_NCVRD_CHRG_AMT",
+            "CLM_MDCR_DDCTBL_AMT",
+            "CLM_RLT_COND_CD",
+            "CLM_OPRTNL_OUTLR_AMT",
+            "CLM_MDCR_NEW_TECH_AMT",
+            "CLM_ISLET_ISOLN_AMT",
+            "CLM_SQSTRTN_RDCTN_AMT",
+            "CLM_1_REV_CNTR_ANSI_RSN_CD",
+            "CLM_1_REV_CNTR_ANSI_GRP_CD",
+            "CLM_MIPS_PMT_AMT"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_ACTV_CARE_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_PBPMT_SW",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_SNF_WVR_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_TLHLTH_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_CPTATN_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_INSTNL_PER_DIEM_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_COINSRNC_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_BLOOD_LBLTY_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_INSTNL_PRFNL_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NCVRD_CHRG_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_RLT_COND_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_OPRTNL_OUTLR_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_NEW_TECH_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_ISLET_ISOLN_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_RSN_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_GRP_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MIPS_PMT_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj419",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zcay26_d260501_obj419"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj419",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj419"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ACTV_CARE_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_PBPMT_SW",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_INSTNL_PER_DIEM_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_COINSRNC_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLOOD_LBLTY_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_INSTNL_PRFNL_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NCVRD_CHRG_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_RLT_COND_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OPRTNL_OUTLR_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_NEW_TECH_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ISLET_ISOLN_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_RSN_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_GRP_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MIPS_PMT_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zcay26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zcay26_d260501_obj419",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj419"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zcay26_d260501_obj419"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc1y26_d260501_obj410",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc1y26_d260501_obj410"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              19
+            ],
+            [
+              19,
+              30
+            ],
+            [
+              30,
+              41
+            ],
+            [
+              41,
+              43
+            ],
+            [
+              43,
+              53
+            ],
+            [
+              53,
+              63
+            ],
+            [
+              63,
+              64
+            ],
+            [
+              64,
+              65
+            ],
+            [
+              65,
+              72
+            ],
+            [
+              72,
+              79
+            ],
+            [
+              79,
+              81
+            ],
+            [
+              81,
+              98
+            ],
+            [
+              98,
+              99
+            ],
+            [
+              99,
+              101
+            ],
+            [
+              101,
+              103
+            ],
+            [
+              103,
+              107
+            ],
+            [
+              107,
+              108
+            ],
+            [
+              108,
+              118
+            ],
+            [
+              118,
+              128
+            ],
+            [
+              128,
+              138
+            ],
+            [
+              138,
+              148
+            ],
+            [
+              148,
+              150
+            ],
+            [
+              150,
+              160
+            ],
+            [
+              160,
+              170
+            ],
+            [
+              170,
+              181
+            ],
+            [
+              181,
+              183
+            ],
+            [
+              183,
+              185
+            ],
+            [
+              185,
+              186
+            ],
+            [
+              186,
+              187
+            ],
+            [
+              187,
+              188
+            ],
+            [
+              188,
+              203
+            ],
+            [
+              203,
+              218
+            ],
+            [
+              218,
+              240
+            ],
+            [
+              240,
+              255
+            ],
+            [
+              255,
+              270
+            ],
+            [
+              270,
+              292
+            ],
+            [
+              292,
+              312
+            ],
+            [
+              312,
+              322
+            ],
+            [
+              322,
+              332
+            ],
+            [
+              332,
+              342
+            ],
+            [
+              342,
+              352
+            ],
+            [
+              352,
+              392
+            ],
+            [
+              392,
+              432
+            ],
+            [
+              432,
+              437
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "PRVDR_OSCAR_NUM",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_FROM_DT",
+            "CLM_THRU_DT",
+            "CLM_BILL_FAC_TYPE_CD",
+            "CLM_BILL_CLSFCTN_CD",
+            "PRNCPL_DGNS_CD",
+            "ADMTG_DGNS_CD",
+            "CLM_MDCR_NPMT_RSN_CD",
+            "CLM_PMT_AMT",
+            "CLM_NCH_PRMRY_PYR_CD",
+            "PRVDR_FAC_FIPS_ST_CD",
+            "BENE_PTNT_STUS_CD",
+            "DGNS_DRG_CD",
+            "CLM_OP_SRVC_TYPE_CD",
+            "FAC_PRVDR_NPI_NUM",
+            "OPRTG_PRVDR_NPI_NUM",
+            "ATNDG_PRVDR_NPI_NUM",
+            "OTHR_PRVDR_NPI_NUM",
+            "CLM_ADJSMT_TYPE_CD",
+            "CLM_EFCTV_DT",
+            "CLM_IDR_LD_DT",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "CLM_ADMSN_TYPE_CD",
+            "CLM_ADMSN_SRC_CD",
+            "CLM_BILL_FREQ_CD",
+            "CLM_QUERY_CD",
+            "DGNS_PRCDR_ICD_IND",
+            "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+            "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+            "CLM_OPRTNL_IME_AMT",
+            "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+            "CLM_HIPPS_UNCOMPD_CARE_AMT",
+            "CLM_OPRTNL_DSPRPRTNT_AMT",
+            "CLM_BLG_PRVDR_OSCAR_NUM",
+            "CLM_BLG_PRVDR_NPI_NUM",
+            "CLM_OPRTG_PRVDR_NPI_NUM",
+            "CLM_ATNDG_PRVDR_NPI_NUM",
+            "CLM_OTHR_PRVDR_NPI_NUM",
+            "CLM_CNTL_NUM",
+            "CLM_ORG_CNTL_NUM",
+            "CLM_CNTRCTR_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_BILL_FAC_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_BILL_CLSFCTN_CD",
+            "type": "integer"
+          },
+          {
+            "name": "PRNCPL_DGNS_CD",
+            "type": "string"
+          },
+          {
+            "name": "ADMTG_DGNS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_NPMT_RSN_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PMT_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_NCH_PRMRY_PYR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "PRVDR_FAC_FIPS_ST_CD",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_PTNT_STUS_CD",
+            "type": "integer"
+          },
+          {
+            "name": "DGNS_DRG_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_OP_SRVC_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "FAC_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "OPRTG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "ATNDG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "OTHR_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date"
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_ADMSN_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_ADMSN_SRC_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_BILL_FREQ_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_QUERY_CD",
+            "type": "integer"
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_OPRTNL_IME_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_HIPPS_UNCOMPD_CARE_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_OPRTNL_DSPRPRTNT_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_OPRTG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_ATNDG_PRVDR_NPI_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_OTHR_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_ORG_CNTL_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj410",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc1y26_d260501_obj410"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj410",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj410"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BILL_FAC_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BILL_CLSFCTN_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRNCPL_DGNS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "ADMTG_DGNS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_NPMT_RSN_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PMT_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NCH_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_FAC_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_PTNT_STUS_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "DGNS_DRG_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OP_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "FAC_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "ATNDG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADMSN_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADMSN_SRC_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BILL_FREQ_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_QUERY_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OPRTNL_IME_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_HIPPS_UNCOMPD_CARE_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OPRTNL_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ATNDG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ORG_CNTL_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc1y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc1y26_d260501_obj410",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj410"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc1y26_d260501_obj410"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc3y26_d260501_obj412",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc3y26_d260501_obj412"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              24,
+              35
+            ],
+            [
+              35,
+              37
+            ],
+            [
+              37,
+              39
+            ],
+            [
+              39,
+              46
+            ],
+            [
+              46,
+              56
+            ],
+            [
+              56,
+              67
+            ],
+            [
+              67,
+              73
+            ],
+            [
+              73,
+              83
+            ],
+            [
+              83,
+              93
+            ],
+            [
+              93,
+              94
+            ],
+            [
+              94,
+              100
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_VAL_SQNC_NUM",
+            "CLM_PRCDR_CD",
+            "CLM_PRCDR_PRFRM_DT",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "PRVDR_OSCAR_NUM",
+            "CLM_FROM_DT",
+            "CLM_THRU_DT",
+            "DGNS_PRCDR_ICD_IND",
+            "CLM_BLG_PRVDR_OSCAR_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PRCDR_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PRCDR_PRFRM_DT",
+            "type": "string"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj412",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc3y26_d260501_obj412"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj412",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj412"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRCDR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRCDR_PRFRM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc3y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc3y26_d260501_obj412",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj412"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc3y26_d260501_obj412"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc5y26_d260501_obj414",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc5y26_d260501_obj414"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              23
+            ],
+            [
+              23,
+              34
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              45,
+              47
+            ],
+            [
+              47,
+              57
+            ],
+            [
+              57,
+              67
+            ],
+            [
+              67,
+              70
+            ],
+            [
+              70,
+              72
+            ],
+            [
+              72,
+              74
+            ],
+            [
+              74,
+              75
+            ],
+            [
+              75,
+              77
+            ],
+            [
+              77,
+              87
+            ],
+            [
+              87,
+              97
+            ],
+            [
+              97,
+              102
+            ],
+            [
+              102,
+              117
+            ],
+            [
+              117,
+              118
+            ],
+            [
+              118,
+              125
+            ],
+            [
+              125,
+              135
+            ],
+            [
+              135,
+              145
+            ],
+            [
+              145,
+              147
+            ],
+            [
+              147,
+              149
+            ],
+            [
+              149,
+              151
+            ],
+            [
+              151,
+              161
+            ],
+            [
+              161,
+              171
+            ],
+            [
+              171,
+              211
+            ],
+            [
+              211,
+              222
+            ],
+            [
+              222,
+              239
+            ],
+            [
+              239,
+              263
+            ],
+            [
+              263,
+              265
+            ],
+            [
+              265,
+              267
+            ],
+            [
+              267,
+              269
+            ],
+            [
+              269,
+              271
+            ],
+            [
+              271,
+              273
+            ],
+            [
+              273,
+              275
+            ],
+            [
+              275,
+              282
+            ],
+            [
+              282,
+              289
+            ],
+            [
+              289,
+              296
+            ],
+            [
+              296,
+              303
+            ],
+            [
+              303,
+              310
+            ],
+            [
+              310,
+              317
+            ],
+            [
+              317,
+              324
+            ],
+            [
+              324,
+              331
+            ],
+            [
+              331,
+              332
+            ],
+            [
+              332,
+              339
+            ],
+            [
+              339,
+              346
+            ],
+            [
+              346,
+              353
+            ],
+            [
+              353,
+              360
+            ],
+            [
+              360,
+              363
+            ],
+            [
+              363,
+              373
+            ],
+            [
+              373,
+              383
+            ],
+            [
+              383,
+              388
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "CLM_LINE_NUM",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_FROM_DT",
+            "CLM_THRU_DT",
+            "RNDRG_PRVDR_TYPE_CD",
+            "RNDRG_PRVDR_FIPS_ST_CD",
+            "CLM_PRVDR_SPCLTY_CD",
+            "CLM_FED_TYPE_SRVC_CD",
+            "CLM_POS_CD",
+            "CLM_LINE_FROM_DT",
+            "CLM_LINE_THRU_DT",
+            "CLM_LINE_HCPCS_CD",
+            "CLM_LINE_CVRD_PD_AMT",
+            "CLM_LINE_PRMRY_PYR_CD",
+            "CLM_LINE_DGNS_CD",
+            "CLM_RNDRG_PRVDR_TAX_NUM",
+            "RNDRG_PRVDR_NPI_NUM",
+            "CLM_CARR_PMT_DNL_CD",
+            "CLM_PRCSG_IND_CD",
+            "CLM_ADJSMT_TYPE_CD",
+            "CLM_EFCTV_DT",
+            "CLM_IDR_LD_DT",
+            "CLM_CNTL_NUM",
+            "BENE_EQTBL_BIC_HICN_NUM",
+            "CLM_LINE_ALOWD_CHRG_AMT",
+            "CLM_LINE_SRVC_UNIT_QTY",
+            "HCPCS_1_MDFR_CD",
+            "HCPCS_2_MDFR_CD",
+            "HCPCS_3_MDFR_CD",
+            "HCPCS_4_MDFR_CD",
+            "HCPCS_5_MDFR_CD",
+            "CLM_DISP_CD",
+            "CLM_DGNS_1_CD",
+            "CLM_DGNS_2_CD",
+            "CLM_DGNS_3_CD",
+            "CLM_DGNS_4_CD",
+            "CLM_DGNS_5_CD",
+            "CLM_DGNS_6_CD",
+            "CLM_DGNS_7_CD",
+            "CLM_DGNS_8_CD",
+            "DGNS_PRCDR_ICD_IND",
+            "CLM_DGNS_9_CD",
+            "CLM_DGNS_10_CD",
+            "CLM_DGNS_11_CD",
+            "CLM_DGNS_12_CD",
+            "HCPCS_BETOS_CD",
+            "CLM_RNDRG_PRVDR_NPI_NUM",
+            "CLM_RFRG_PRVDR_NPI_NUM",
+            "CLM_CNTRCTR_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "RNDRG_PRVDR_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "RNDRG_PRVDR_FIPS_ST_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PRVDR_SPCLTY_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_PRMRY_PYR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_DGNS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_TAX_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "RNDRG_PRVDR_NPI_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date"
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_1_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_2_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_3_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_4_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_5_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_6_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_7_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_8_CD",
+            "type": "string"
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_DGNS_9_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_10_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_11_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DGNS_12_CD",
+            "type": "string"
+          },
+          {
+            "name": "HCPCS_BETOS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_NPI_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj414",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc5y26_d260501_obj414"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj414",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj414"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "RNDRG_PRVDR_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "RNDRG_PRVDR_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRVDR_SPCLTY_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_DGNS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_TAX_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_1_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_2_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_3_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_4_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_5_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_6_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_7_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_8_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_9_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_10_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_11_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DGNS_12_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "HCPCS_BETOS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc5y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc5y26_d260501_obj414",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj414"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc5y26_d260501_obj414"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc7y26_d260501_obj416",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc7y26_d260501_obj416"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              24,
+              35
+            ],
+            [
+              35,
+              46
+            ],
+            [
+              46,
+              48
+            ],
+            [
+              48,
+              58
+            ],
+            [
+              58,
+              60
+            ],
+            [
+              60,
+              80
+            ],
+            [
+              80,
+              81
+            ],
+            [
+              81,
+              82
+            ],
+            [
+              82,
+              106
+            ],
+            [
+              106,
+              115
+            ],
+            [
+              115,
+              117
+            ],
+            [
+              137,
+              150
+            ],
+            [
+              150,
+              152
+            ],
+            [
+              152,
+              162
+            ],
+            [
+              162,
+              172
+            ],
+            [
+              172,
+              184
+            ],
+            [
+              184,
+              193
+            ],
+            [
+              193,
+              195
+            ],
+            [
+              195,
+              230
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_LINE_NDC_CD",
+            "CLM_TYPE_CD",
+            "CLM_LINE_FROM_DT",
+            "PRVDR_SRVC_ID_QLFYR_CD",
+            "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+            "CLM_DSPNSNG_STUS_CD",
+            "CLM_DAW_PROD_SLCTN_CD",
+            "CLM_LINE_SRVC_UNIT_QTY",
+            "CLM_LINE_DAYS_SUPLY_QTY",
+            "PRVDR_PRSBNG_ID_QLFYR_CD",
+            "CLM_LINE_BENE_PMT_AMT",
+            "CLM_ADJSMT_TYPE_CD",
+            "CLM_EFCTV_DT",
+            "CLM_IDR_LD_DT",
+            "CLM_LINE_RX_SRVC_RFRNC_NUM",
+            "CLM_LINE_RX_FILL_NUM",
+            "CLM_PHRMCY_SRVC_TYPE_CD",
+            "CLM_PRSBNG_PRVDR_GNRC_ID_NUM"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_NDC_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string"
+          },
+          {
+            "name": "PRVDR_SRVC_ID_QLFYR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DSPNSNG_STUS_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DAW_PROD_SLCTN_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_LINE_DAYS_SUPLY_QTY",
+            "type": "string"
+          },
+          {
+            "name": "PRVDR_PRSBNG_ID_QLFYR_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_BENE_PMT_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date"
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_RX_SRVC_RFRNC_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_RX_FILL_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PHRMCY_SRVC_TYPE_CD",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_PRSBNG_PRVDR_GNRC_ID_NUM",
+            "type": "integer"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj416",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc7y26_d260501_obj416"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj416",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj416"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NDC_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_SRVC_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DSPNSNG_STUS_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DAW_PROD_SLCTN_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_DAYS_SUPLY_QTY",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVDR_PRSBNG_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_BENE_PMT_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_RX_SRVC_RFRNC_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_RX_FILL_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PHRMCY_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PRSBNG_PRVDR_GNRC_ID_NUM",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc7y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc7y26_d260501_obj416",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj416"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc7y26_d260501_obj416"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zc9y26_d260501_obj418",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zc9y26_d260501_obj418"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              12,
+              23
+            ],
+            [
+              23,
+              33
+            ],
+            [
+              33,
+              43
+            ]
+          ],
+          "columnNames": [
+            "HICN_MBI_XREF_IND",
+            "CRNT_NUM",
+            "PRVS_NUM",
+            "PRVS_ID_EFCTV_DT",
+            "PRVS_ID_OBSLT_DT"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "HICN_MBI_XREF_IND",
+            "type": "string"
+          },
+          {
+            "name": "CRNT_NUM",
+            "type": "string"
+          },
+          {
+            "name": "PRVS_NUM",
+            "type": "string"
+          },
+          {
+            "name": "PRVS_ID_EFCTV_DT",
+            "type": "string"
+          },
+          {
+            "name": "PRVS_ID_OBSLT_DT",
+            "type": "string"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj418",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zc9y26_d260501_obj418"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj418",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj418"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "HICN_MBI_XREF_IND",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CRNT_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVS_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVS_ID_EFCTV_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "PRVS_ID_OBSLT_DT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zc9y26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zc9y26_d260501_obj418",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj418"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zc9y26_d260501_obj418"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      },
+      {
+        "name": "landing_read_p_d0284_aco_zcby26_d260501_obj420",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_p_d0284_aco_zcby26_d260501_obj420"
+        },
+        "file_type": "FixedWidth",
+        "read_options": {
+          "fetch_size": 10000,
+          "encoding": "UTF-8",
+          "columnPositions": [
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              23
+            ],
+            [
+              23,
+              34
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              45,
+              47
+            ],
+            [
+              47,
+              48
+            ],
+            [
+              48,
+              49
+            ],
+            [
+              49,
+              50
+            ],
+            [
+              50,
+              51
+            ],
+            [
+              51,
+              52
+            ],
+            [
+              52,
+              54
+            ],
+            [
+              54,
+              56
+            ],
+            [
+              56,
+              58
+            ],
+            [
+              58,
+              60
+            ],
+            [
+              60,
+              62
+            ],
+            [
+              62,
+              77
+            ],
+            [
+              77,
+              92
+            ],
+            [
+              92,
+              93
+            ],
+            [
+              93,
+              112
+            ],
+            [
+              112,
+              122
+            ]
+          ],
+          "columnNames": [
+            "CUR_CLM_UNIQ_ID",
+            "CLM_LINE_NUM",
+            "BENE_MBI_ID",
+            "BENE_HIC_NUM",
+            "CLM_TYPE_CD",
+            "CLM_LINE_NGACO_PBPMT_SW",
+            "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+            "CLM_LINE_NGACO_SNF_WVR_SW",
+            "CLM_LINE_NGACO_TLHLTH_SW",
+            "CLM_LINE_NGACO_CPTATN_SW",
+            "CLM_DEMO_1ST_NUM",
+            "CLM_DEMO_2ND_NUM",
+            "CLM_DEMO_3RD_NUM",
+            "CLM_DEMO_4TH_NUM",
+            "CLM_DEMO_5TH_NUM",
+            "CLM_PBP_INCLSN_AMT",
+            "CLM_PBP_RDCTN_AMT",
+            "CLM_NGACO_CMG_WVR_SW",
+            "CLM_MDCR_DDCTBL_AMT",
+            "CLM_SQSTRTN_RDCTN_AMT"
+          ],
+          "nullValue": "",
+          "lineSep": "\r\n",
+          "trimValues": true,
+          "skipLines": 0,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string"
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string"
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NGACO_PBPMT_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NGACO_SNF_WVR_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NGACO_TLHLTH_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_LINE_NGACO_CPTATN_SW",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string"
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string"
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer"
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "decimal(38,10)"
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string"
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string"
+          }
+        ],
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj420",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_p_d0284_aco_zcby26_d260501_obj420"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'cclf'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj420",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj420"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "expected_schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NGACO_PBPMT_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_LINE_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "decimal(38,10)",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false,
+            "is_required": true
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "batch_id",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true,
+            "is_required": false
+          }
+        ],
+        "dataset_id": "p_d0284_aco_zcby26_d260501",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_p_d0284_aco_zcby26_d260501_obj420",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj420"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_p_d0284_aco_zcby26_d260501_obj420"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
+      }
+    ],
+    "description": "Cloned from File to DB Ingestion V2",
+    "batch_control": {
+      "enabled": true,
+      "feed_name": "cclf",
+      "business_date": "2026-05-20",
+      "delivery_id": "cclf_2026-05-20",
+      "batch_id": 1,
+      "use_existing_batch_id": false,
+      "validate_existing_batch": true,
+      "require_input_acceptance": true,
+      "auto_accept_input_on_batch_init": true,
+      "input_registry_processed_on_stage": "bronze",
+      "seed_stage_rows": true,
+      "stages": [
+        "bronze"
+      ],
+      "storage": {
+        "connection": {
+          "name": "control_delta",
+          "connection_type": "DatabricksDeltaLake"
+        },
+        "namespace": {
+          "catalog": "main",
+          "schema": "control"
+        }
+      },
+      "stage_to_transformations": {
+        "bronze": [
+          "landing_read_p_d0284_aco_zc2y26_d260501_obj411",
+          "add_lineage_metadata_obj411",
+          "schema_drift_guard_obj411",
+          "bronze_write_p_d0284_aco_zc2y26_d260501_obj411",
+          "landing_read_p_d0284_aco_zc4y26_d260501_obj413",
+          "add_lineage_metadata_obj413",
+          "schema_drift_guard_obj413",
+          "bronze_write_p_d0284_aco_zc4y26_d260501_obj413",
+          "landing_read_p_d0284_aco_zc6y26_d260501_obj415",
+          "add_lineage_metadata_obj415",
+          "schema_drift_guard_obj415",
+          "bronze_write_p_d0284_aco_zc6y26_d260501_obj415",
+          "landing_read_p_d0284_aco_zc8y26_d260501_obj417",
+          "add_lineage_metadata_obj417",
+          "schema_drift_guard_obj417",
+          "bronze_write_p_d0284_aco_zc8y26_d260501_obj417",
+          "landing_read_p_d0284_aco_zcay26_d260501_obj419",
+          "add_lineage_metadata_obj419",
+          "schema_drift_guard_obj419",
+          "bronze_write_p_d0284_aco_zcay26_d260501_obj419",
+          "landing_read_p_d0284_aco_zc1y26_d260501_obj410",
+          "add_lineage_metadata_obj410",
+          "schema_drift_guard_obj410",
+          "bronze_write_p_d0284_aco_zc1y26_d260501_obj410",
+          "landing_read_p_d0284_aco_zc3y26_d260501_obj412",
+          "add_lineage_metadata_obj412",
+          "schema_drift_guard_obj412",
+          "bronze_write_p_d0284_aco_zc3y26_d260501_obj412",
+          "landing_read_p_d0284_aco_zc5y26_d260501_obj414",
+          "add_lineage_metadata_obj414",
+          "schema_drift_guard_obj414",
+          "bronze_write_p_d0284_aco_zc5y26_d260501_obj414",
+          "landing_read_p_d0284_aco_zc7y26_d260501_obj416",
+          "add_lineage_metadata_obj416",
+          "schema_drift_guard_obj416",
+          "bronze_write_p_d0284_aco_zc7y26_d260501_obj416",
+          "landing_read_p_d0284_aco_zc9y26_d260501_obj418",
+          "add_lineage_metadata_obj418",
+          "schema_drift_guard_obj418",
+          "bronze_write_p_d0284_aco_zc9y26_d260501_obj418",
+          "landing_read_p_d0284_aco_zcby26_d260501_obj420",
+          "add_lineage_metadata_obj420",
+          "schema_drift_guard_obj420",
+          "bronze_write_p_d0284_aco_zcby26_d260501_obj420"
+        ]
+      },
+      "error_threshold_pct": 50.0,
+      "run_scope": "GROUP",
+      "atomic_commit_enabled": true,
+      "group_id": 226,
+      "expected_group_members": 11,
+      "group_run_id": "cclf_20260520T140238Z"
+    }
+  },
+  "pipeline_type": "design",
+  "engine_type": "pyspark",
+  "total_test_scenario": null,
+  "passed_test": null,
+  "failed_test": null,
+  "sme_recommendations_count": null,
+  "process_status": null,
+  "pipeline_parameters": []
+}
