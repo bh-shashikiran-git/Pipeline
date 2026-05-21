@@ -1,6 +1,6 @@
 {
   "created_at": "2026-05-20T13:35:55.283932Z",
-  "updated_at": "2026-05-20T13:35:55.283932Z",
+  "updated_at": "2026-05-20T19:39:31.895610Z",
   "created_by": "kiran@bighammer.ai",
   "updated_by": "kiran@bighammer.ai",
   "is_deleted": false,
@@ -22,106 +22,5709 @@
   "bh_project_name": "demo_proj",
   "bh_github_username": "bh-shashikiran-git",
   "pipeline_json": {
-    "data_domain_id": 89,
-    "data_domain_name": "ADT (Admission, Discharge, Transfer)",
-    "ingestion_group_id": 226,
-    "source_rows": [
-      {
-        "data_src_id": 749,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zcby26_d260501 \u00b7 default.p_d0284_aco_zcby26_d260501"
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "name": "silver_raw_cclf_bronze_to_silver_raw_load_260520_596f",
+    "description": "Requirement Pipeline",
+    "version": "1.0.0",
+    "engine_type": "pyspark",
+    "mode": "ENGINE",
+    "parameters": [],
+    "connections": {
+      "azure_unity_conn22_cinqdev": {
+        "connection_config_id": 35,
+        "name": "azure_unity_conn22_cinqdev",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "default",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22"
       },
-      {
-        "data_src_id": 747,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zcay26_d260501 \u00b7 default.p_d0284_aco_zcay26_d260501"
-      },
-      {
-        "data_src_id": 745,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc9y26_d260501 \u00b7 default.p_d0284_aco_zc9y26_d260501"
-      },
-      {
-        "data_src_id": 743,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc8y26_d260501 \u00b7 default.p_d0284_aco_zc8y26_d260501"
-      },
-      {
-        "data_src_id": 741,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc7y26_d260501 \u00b7 default.p_d0284_aco_zc7y26_d260501"
-      },
-      {
-        "data_src_id": 739,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc6y26_d260501 \u00b7 default.p_d0284_aco_zc6y26_d260501"
-      },
-      {
-        "data_src_id": 737,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc5y26_d260501 \u00b7 default.p_d0284_aco_zc5y26_d260501"
-      },
-      {
-        "data_src_id": 735,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc4y26_d260501 \u00b7 default.p_d0284_aco_zc4y26_d260501"
-      },
-      {
-        "data_src_id": 733,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc3y26_d260501 \u00b7 default.p_d0284_aco_zc3y26_d260501"
-      },
-      {
-        "data_src_id": 731,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc2y26_d260501 \u00b7 default.p_d0284_aco_zc2y26_d260501"
-      },
-      {
-        "data_src_id": 729,
-        "ingest_object_id": null,
-        "label": "p_d0284_aco_zc1y26_d260501 \u00b7 default.p_d0284_aco_zc1y26_d260501"
+      "azure_unity_conn22_main": {
+        "connection_config_id": 35,
+        "name": "azure_unity_conn22_main",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "main",
+        "schema": "cclf_silver_raw",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22"
       }
-    ],
-    "target_rows": [
-      {
-        "data_src_id": 727,
-        "label": "pharmacy_claim_line \u00b7 cclf_silver_raw.pharmacy_claim_line"
+    },
+    "sources": {
+      "p_d0284_aco_zc1y26_d260501": {
+        "data_src_id": 729,
+        "name": "p_d0284_aco_zc1y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc1y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "PRVDR_OSCAR_NUM",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_FROM_DT",
+          "CLM_THRU_DT",
+          "CLM_BILL_FAC_TYPE_CD",
+          "CLM_BILL_CLSFCTN_CD",
+          "PRNCPL_DGNS_CD",
+          "ADMTG_DGNS_CD",
+          "CLM_MDCR_NPMT_RSN_CD",
+          "CLM_PMT_AMT",
+          "CLM_NCH_PRMRY_PYR_CD",
+          "PRVDR_FAC_FIPS_ST_CD",
+          "BENE_PTNT_STUS_CD",
+          "DGNS_DRG_CD",
+          "CLM_OP_SRVC_TYPE_CD",
+          "FAC_PRVDR_NPI_NUM",
+          "OPRTG_PRVDR_NPI_NUM",
+          "ATNDG_PRVDR_NPI_NUM",
+          "OTHR_PRVDR_NPI_NUM",
+          "CLM_ADJSMT_TYPE_CD",
+          "CLM_EFCTV_DT",
+          "CLM_IDR_LD_DT",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "CLM_ADMSN_TYPE_CD",
+          "CLM_ADMSN_SRC_CD",
+          "CLM_BILL_FREQ_CD",
+          "CLM_QUERY_CD",
+          "DGNS_PRCDR_ICD_IND",
+          "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+          "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+          "CLM_OPRTNL_IME_AMT",
+          "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+          "CLM_HIPPS_UNCOMPD_CARE_AMT",
+          "CLM_OPRTNL_DSPRPRTNT_AMT",
+          "CLM_BLG_PRVDR_OSCAR_NUM",
+          "CLM_BLG_PRVDR_NPI_NUM",
+          "CLM_OPRTG_PRVDR_NPI_NUM",
+          "CLM_ATNDG_PRVDR_NPI_NUM",
+          "CLM_OTHR_PRVDR_NPI_NUM",
+          "CLM_CNTL_NUM",
+          "CLM_ORG_CNTL_NUM",
+          "CLM_CNTRCTR_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_FAC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_CLSFCTN_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRNCPL_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "ADMTG_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_NPMT_RSN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PMT_AMT",
+            "type": "decimal(16,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NCH_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_FAC_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PTNT_STUS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_DRG_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OP_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "FAC_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "ATNDG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADMSN_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADMSN_SRC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_FREQ_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_QUERY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_IME_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_HIPPS_UNCOMPD_CARE_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ATNDG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ORG_CNTL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
       },
-      {
-        "data_src_id": 726,
-        "label": "pharmacy_claim_header \u00b7 cclf_silver_raw.pharmacy_claim_header"
+      "p_d0284_aco_zc2y26_d260501": {
+        "data_src_id": 731,
+        "name": "p_d0284_aco_zc2y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc2y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "CLM_LINE_NUM",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_LINE_PROD_REV_CTR_CD",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "PRVDR_OSCAR_NUM",
+          "CLM_LINE_SRVC_UNIT_QTY",
+          "CLM_LINE_CVRD_PD_AMT",
+          "HCPCS_1_MDFR_CD",
+          "HCPCS_2_MDFR_CD",
+          "HCPCS_3_MDFR_CD",
+          "HCPCS_4_MDFR_CD",
+          "HCPCS_5_MDFR_CD",
+          "CLM_REV_APC_HIPPS_CD",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_PROD_REV_CTR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_REV_APC_HIPPS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
       },
-      {
+      "p_d0284_aco_zc3y26_d260501": {
+        "data_src_id": 733,
+        "name": "p_d0284_aco_zc3y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc3y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_VAL_SQNC_NUM",
+          "CLM_PRCDR_CD",
+          "CLM_PRCDR_PRFRM_DT",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "PRVDR_OSCAR_NUM",
+          "CLM_FROM_DT",
+          "CLM_THRU_DT",
+          "DGNS_PRCDR_ICD_IND",
+          "CLM_BLG_PRVDR_OSCAR_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCDR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCDR_PRFRM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc4y26_d260501": {
+        "data_src_id": 735,
+        "name": "p_d0284_aco_zc4y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc4y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_PROD_TYPE_CD",
+          "CLM_VAL_SQNC_NUM",
+          "CLM_DGNS_CD",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "PRVDR_OSCAR_NUM",
+          "CLM_FROM_DT",
+          "CLM_THRU_DT",
+          "CLM_POA_IND",
+          "DGNS_PRCDR_ICD_IND",
+          "CLM_BLG_PRVDR_OSCAR_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PROD_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POA_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc5y26_d260501": {
+        "data_src_id": 737,
+        "name": "p_d0284_aco_zc5y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc5y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "CLM_LINE_NUM",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_FROM_DT",
+          "CLM_THRU_DT",
+          "RNDRG_PRVDR_TYPE_CD",
+          "RNDRG_PRVDR_FIPS_ST_CD",
+          "CLM_PRVDR_SPCLTY_CD",
+          "CLM_FED_TYPE_SRVC_CD",
+          "CLM_POS_CD",
+          "CLM_LINE_FROM_DT",
+          "CLM_LINE_THRU_DT",
+          "CLM_LINE_HCPCS_CD",
+          "CLM_LINE_CVRD_PD_AMT",
+          "CLM_LINE_PRMRY_PYR_CD",
+          "CLM_LINE_DGNS_CD",
+          "CLM_RNDRG_PRVDR_TAX_NUM",
+          "RNDRG_PRVDR_NPI_NUM",
+          "CLM_CARR_PMT_DNL_CD",
+          "CLM_PRCSG_IND_CD",
+          "CLM_ADJSMT_TYPE_CD",
+          "CLM_EFCTV_DT",
+          "CLM_IDR_LD_DT",
+          "CLM_CNTL_NUM",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "CLM_LINE_ALOWD_CHRG_AMT",
+          "CLM_LINE_SRVC_UNIT_QTY",
+          "HCPCS_1_MDFR_CD",
+          "HCPCS_2_MDFR_CD",
+          "HCPCS_3_MDFR_CD",
+          "HCPCS_4_MDFR_CD",
+          "HCPCS_5_MDFR_CD",
+          "CLM_DISP_CD",
+          "CLM_DGNS_1_CD",
+          "CLM_DGNS_2_CD",
+          "CLM_DGNS_3_CD",
+          "CLM_DGNS_4_CD",
+          "CLM_DGNS_5_CD",
+          "CLM_DGNS_6_CD",
+          "CLM_DGNS_7_CD",
+          "CLM_DGNS_8_CD",
+          "DGNS_PRCDR_ICD_IND",
+          "CLM_DGNS_9_CD",
+          "CLM_DGNS_10_CD",
+          "CLM_DGNS_11_CD",
+          "CLM_DGNS_12_CD",
+          "HCPCS_BETOS_CD",
+          "CLM_RNDRG_PRVDR_NPI_NUM",
+          "CLM_RFRG_PRVDR_NPI_NUM",
+          "CLM_CNTRCTR_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRVDR_SPCLTY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_TAX_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(15,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_1_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_2_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_3_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_4_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_5_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_6_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_7_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_8_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_9_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_10_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_11_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_12_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_BETOS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc6y26_d260501": {
+        "data_src_id": 739,
+        "name": "p_d0284_aco_zc6y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc6y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "CLM_LINE_NUM",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_FROM_DT",
+          "CLM_THRU_DT",
+          "CLM_FED_TYPE_SRVC_CD",
+          "CLM_POS_CD",
+          "CLM_LINE_FROM_DT",
+          "CLM_LINE_THRU_DT",
+          "CLM_LINE_HCPCS_CD",
+          "CLM_LINE_CVRD_PD_AMT",
+          "CLM_PRMRY_PYR_CD",
+          "PAYTO_PRVDR_NPI_NUM",
+          "ORDRG_PRVDR_NPI_NUM",
+          "CLM_CARR_PMT_DNL_CD",
+          "CLM_PRCSG_IND_CD",
+          "CLM_ADJSMT_TYPE_CD",
+          "CLM_EFCTV_DT",
+          "CLM_IDR_LD_DT",
+          "CLM_CNTL_NUM",
+          "BENE_EQTBL_BIC_HICN_NUM",
+          "CLM_LINE_ALOWD_CHRG_AMT",
+          "CLM_DISP_CD",
+          "CLM_BLG_PRVDR_NPI_NUM",
+          "CLM_RFRG_PRVDR_NPI_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PAYTO_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "ORDRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(15,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc7y26_d260501": {
+        "data_src_id": 741,
+        "name": "p_d0284_aco_zc7y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc7y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_LINE_NDC_CD",
+          "CLM_TYPE_CD",
+          "CLM_LINE_FROM_DT",
+          "PRVDR_SRVC_ID_QLFYR_CD",
+          "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+          "CLM_DSPNSNG_STUS_CD",
+          "CLM_DAW_PROD_SLCTN_CD",
+          "CLM_LINE_SRVC_UNIT_QTY",
+          "CLM_LINE_DAYS_SUPLY_QTY",
+          "PRVDR_PRSBNG_ID_QLFYR_CD",
+          "CLM_LINE_BENE_PMT_AMT",
+          "CLM_ADJSMT_TYPE_CD",
+          "CLM_EFCTV_DT",
+          "CLM_IDR_LD_DT",
+          "CLM_LINE_RX_SRVC_RFRNC_NUM",
+          "CLM_LINE_RX_FILL_NUM",
+          "CLM_PHRMCY_SRVC_TYPE_CD",
+          "CLM_PRSBNG_PRVDR_GNRC_ID_NUM",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NDC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_SRVC_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DSPNSNG_STUS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DAW_PROD_SLCTN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "decimal(21,4)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_DAYS_SUPLY_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_PRSBNG_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_BENE_PMT_AMT",
+            "type": "decimal(11,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_RX_SRVC_RFRNC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_RX_FILL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PHRMCY_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRSBNG_PRVDR_GNRC_ID_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc8y26_d260501": {
+        "data_src_id": 743,
+        "name": "p_d0284_aco_zc8y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc8y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "BENE_FIPS_STATE_CD",
+          "BENE_FIPS_CNTY_CD",
+          "BENE_ZIP_CD",
+          "BENE_DOB",
+          "BENE_SEX_CD",
+          "BENE_RACE_CD",
+          "BENE_AGE",
+          "BENE_MDCR_STUS_CD",
+          "BENE_DUAL_STUS_CD",
+          "BENE_DEATH_DT",
+          "BENE_RNG_BGN_DT",
+          "BENE_RNG_END_DT",
+          "BENE_1ST_NAME",
+          "BENE_MIDL_NAME",
+          "BENE_LAST_NAME",
+          "BENE_ORGNL_ENTLMT_RSN_CD",
+          "BENE_ENTLMT_BUYIN_IND",
+          "BENE_PART_A_ENRLMT_BGN_DT",
+          "BENE_PART_B_ENRLMT_BGN_DT",
+          "BENE_LINE_1_ADR",
+          "BENE_LINE_2_ADR",
+          "BENE_LINE_3_ADR",
+          "BENE_LINE_4_ADR",
+          "BENE_LINE_5_ADR",
+          "BENE_LINE_6_ADR",
+          "GEO_ZIP_PLC_NAME",
+          "GEO_USPS_STATE_CD",
+          "GEO_ZIP5_CD",
+          "GEO_ZIP4_CD",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_FIPS_STATE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_FIPS_CNTY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ZIP_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DOB",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_SEX_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RACE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_AGE",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MDCR_STUS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DUAL_STUS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DEATH_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RNG_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RNG_END_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_1ST_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MIDL_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LAST_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ORGNL_ENTLMT_RSN_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ENTLMT_BUYIN_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PART_A_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PART_B_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_1_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_2_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_3_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_4_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_5_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_6_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP_PLC_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_USPS_STATE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP5_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP4_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zc9y26_d260501": {
+        "data_src_id": 745,
+        "name": "p_d0284_aco_zc9y26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zc9y26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "HICN_MBI_XREF_IND",
+          "CRNT_NUM",
+          "PRVS_NUM",
+          "PRVS_ID_EFCTV_DT",
+          "PRVS_ID_OBSLT_DT",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "HICN_MBI_XREF_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CRNT_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_ID_EFCTV_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_ID_OBSLT_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zcay26_d260501": {
+        "data_src_id": 747,
+        "name": "p_d0284_aco_zcay26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zcay26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_ACTV_CARE_FROM_DT",
+          "CLM_NGACO_PBPMT_SW",
+          "CLM_NGACO_PDSCHRG_HCBS_SW",
+          "CLM_NGACO_SNF_WVR_SW",
+          "CLM_NGACO_TLHLTH_SW",
+          "CLM_NGACO_CPTATN_SW",
+          "CLM_DEMO_1ST_NUM",
+          "CLM_DEMO_2ND_NUM",
+          "CLM_DEMO_3RD_NUM",
+          "CLM_DEMO_4TH_NUM",
+          "CLM_DEMO_5TH_NUM",
+          "CLM_PBP_INCLSN_AMT",
+          "CLM_PBP_RDCTN_AMT",
+          "CLM_NGACO_CMG_WVR_SW",
+          "CLM_INSTNL_PER_DIEM_AMT",
+          "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+          "CLM_MDCR_COINSRNC_AMT",
+          "CLM_BLOOD_LBLTY_AMT",
+          "CLM_INSTNL_PRFNL_AMT",
+          "CLM_NCVRD_CHRG_AMT",
+          "CLM_MDCR_DDCTBL_AMT",
+          "CLM_RLT_COND_CD",
+          "CLM_OPRTNL_OUTLR_AMT",
+          "CLM_MDCR_NEW_TECH_AMT",
+          "CLM_ISLET_ISOLN_AMT",
+          "CLM_SQSTRTN_RDCTN_AMT",
+          "CLM_1_REV_CNTR_ANSI_RSN_CD",
+          "CLM_1_REV_CNTR_ANSI_GRP_CD",
+          "CLM_MIPS_PMT_AMT",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ACTV_CARE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_PBPMT_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_INSTNL_PER_DIEM_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_COINSRNC_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLOOD_LBLTY_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_INSTNL_PRFNL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NCVRD_CHRG_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RLT_COND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_OUTLR_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_NEW_TECH_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ISLET_ISOLN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_RSN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_GRP_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MIPS_PMT_AMT",
+            "type": "decimal(18,2)",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      },
+      "p_d0284_aco_zcby26_d260501": {
+        "data_src_id": 749,
+        "name": "p_d0284_aco_zcby26_d260501",
+        "source_type": "Relational",
+        "table_name": "p_d0284_aco_zcby26_d260501",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_cinqdev"
+        },
+        "fields": [
+          "CUR_CLM_UNIQ_ID",
+          "CLM_LINE_NUM",
+          "BENE_MBI_ID",
+          "BENE_HIC_NUM",
+          "CLM_TYPE_CD",
+          "CLM_LINE_NGACO_PBPMT_SW",
+          "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+          "CLM_LINE_NGACO_SNF_WVR_SW",
+          "CLM_LINE_NGACO_TLHLTH_SW",
+          "CLM_LINE_NGACO_CPTATN_SW",
+          "CLM_DEMO_1ST_NUM",
+          "CLM_DEMO_2ND_NUM",
+          "CLM_DEMO_3RD_NUM",
+          "CLM_DEMO_4TH_NUM",
+          "CLM_DEMO_5TH_NUM",
+          "CLM_PBP_INCLSN_AMT",
+          "CLM_PBP_RDCTN_AMT",
+          "CLM_NGACO_CMG_WVR_SW",
+          "CLM_MDCR_DDCTBL_AMT",
+          "CLM_SQSTRTN_RDCTN_AMT",
+          "corrupt_record",
+          "batch_id",
+          "feed_name",
+          "ingest_ts",
+          "ingest_year",
+          "ingest_month",
+          "ingest_day"
+        ],
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_PBPMT_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(13,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "db_schema": "default"
+      }
+    },
+    "targets": {
+      "patient": {
         "data_src_id": 725,
-        "label": "patient \u00b7 cclf_silver_raw.patient"
+        "name": "patient",
+        "target_type": "Relational",
+        "table_name": "patient",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "mbi_id",
+          "hicn",
+          "source_member_id",
+          "state_fips_code",
+          "county_fips_code",
+          "zip_code",
+          "date_of_birth",
+          "gender",
+          "race_code",
+          "mdcr_status_code",
+          "dual_status_code",
+          "deceased_date",
+          "bene_rng_bgn_dt",
+          "bene_rng_end_dt",
+          "first_name",
+          "middle_name",
+          "last_name",
+          "original_entitlement_reason_code",
+          "entitlement_buyin_indicator",
+          "part_a_enrollment_begin_date",
+          "part_b_enrollment_begin_date",
+          "address_line1",
+          "address_line2",
+          "address_line3",
+          "address_line4",
+          "address_line5",
+          "address_line6",
+          "city",
+          "state",
+          "zip5",
+          "zip4"
+        ],
+        "process_deletes": false
       },
-      {
-        "data_src_id": 724,
-        "label": "claim_provider \u00b7 cclf_silver_raw.claim_provider"
-      },
-      {
-        "data_src_id": 723,
-        "label": "claim_procedure \u00b7 cclf_silver_raw.claim_procedure"
-      },
-      {
-        "data_src_id": 722,
-        "label": "claim_line_adjudication \u00b7 cclf_silver_raw.claim_line_adjudication"
-      },
-      {
-        "data_src_id": 721,
-        "label": "claim_line \u00b7 cclf_silver_raw.claim_line"
-      },
-      {
+      "claim_header": {
         "data_src_id": 720,
-        "label": "claim_header \u00b7 cclf_silver_raw.claim_header"
+        "name": "claim_header",
+        "target_type": "Relational",
+        "table_name": "claim_header",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "claim_type",
+          "statement_from",
+          "statement_through",
+          "bill_type",
+          "claim_status",
+          "source_billing_org_id",
+          "discharge_status",
+          "drg_code",
+          "admission_source",
+          "billing_provider_npi",
+          "attending_provider_npi",
+          "claim_adjustment_type_cd",
+          "claim_effective_date",
+          "claim_received_date",
+          "admission_type",
+          "replaced_claim_id",
+          "admission_date"
+        ],
+        "process_deletes": false
       },
-      {
+      "claim_line": {
+        "data_src_id": 721,
+        "name": "claim_line",
+        "target_type": "Relational",
+        "table_name": "claim_line",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "line_number",
+          "source_line_id",
+          "service_date",
+          "service_end_date",
+          "revenue_code",
+          "procedure_code",
+          "source_code_system",
+          "place_of_service",
+          "billed_units",
+          "modifier_1",
+          "modifier_2",
+          "modifier_3",
+          "modifier_4",
+          "modifier_5"
+        ],
+        "process_deletes": false
+      },
+      "claim_procedure": {
+        "data_src_id": 723,
+        "name": "claim_procedure",
+        "target_type": "Relational",
+        "table_name": "claim_procedure",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "procedure_sequence",
+          "source_procedure_code",
+          "procedure_date",
+          "source_procedure_code_system"
+        ],
+        "process_deletes": false
+      },
+      "claim_diagnosis": {
         "data_src_id": 719,
-        "label": "claim_diagnosis \u00b7 cclf_silver_raw.claim_diagnosis"
+        "name": "claim_diagnosis",
+        "target_type": "Relational",
+        "table_name": "claim_diagnosis",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_diagnosis_code",
+          "source_diagnosis_code_system",
+          "diagnosis_sequence",
+          "diagnosis_type",
+          "poa_flag"
+        ],
+        "process_deletes": false
+      },
+      "claim_provider": {
+        "data_src_id": 724,
+        "name": "claim_provider",
+        "target_type": "Relational",
+        "table_name": "claim_provider",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_line_id",
+          "provider_scope",
+          "provider_role_code",
+          "provider_identifier_value",
+          "npi",
+          "tin"
+        ],
+        "process_deletes": false
+      },
+      "claim_adjudication": {
+        "data_src_id": 718,
+        "name": "claim_adjudication",
+        "target_type": "Relational",
+        "table_name": "claim_adjudication",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "adjudication_category_code",
+          "adjudication_scope",
+          "amount"
+        ],
+        "process_deletes": false
+      },
+      "claim_line_adjudication": {
+        "data_src_id": 722,
+        "name": "claim_line_adjudication",
+        "target_type": "Relational",
+        "table_name": "claim_line_adjudication",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_line_id",
+          "adjudication_category_code",
+          "adjudication_reason_code",
+          "amount"
+        ],
+        "process_deletes": false
+      },
+      "pharmacy_claim_header": {
+        "data_src_id": 726,
+        "name": "pharmacy_claim_header",
+        "target_type": "Relational",
+        "table_name": "pharmacy_claim_header",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "claim_type",
+          "claim_effective_date",
+          "claim_status"
+        ],
+        "process_deletes": false
+      },
+      "pharmacy_claim_line": {
+        "data_src_id": 727,
+        "name": "pharmacy_claim_line",
+        "target_type": "Relational",
+        "table_name": "pharmacy_claim_line",
+        "load_mode": "merge",
+        "connection": {
+          "$ref": "#/connections/azure_unity_conn22_main"
+        },
+        "schema": "cclf_silver_raw",
+        "merge_keys": [
+          "batch_id",
+          "record_hash",
+          "is_deleted",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "line_number",
+          "service_date",
+          "ndc_code",
+          "source_drug_code",
+          "source_code_system",
+          "dispensing_facility_id",
+          "claim_status",
+          "quantity",
+          "days_supply",
+          "prescriber_id",
+          "member_responsibility"
+        ],
+        "process_deletes": false,
+        "scd_config": {
+          "scd_type_1_columns": [
+            "source_system",
+            "silver_id",
+            "source_claim_id",
+            "line_number",
+            "service_date",
+            "ndc_code",
+            "source_drug_code",
+            "source_code_system",
+            "dispensing_facility_id",
+            "claim_status",
+            "quantity",
+            "days_supply",
+            "prescriber_id",
+            "member_responsibility"
+          ]
+        },
+        "delete_config": {
+          "delete_type": "infer",
+          "delete_action": "soft_delete"
+        }
+      }
+    },
+    "transformations": [
+      {
+        "name": "p_d0284_aco_zc1y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc1y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_1",
+          "PRVDR_OSCAR_NUM": "PRVDR_OSCAR_NUM_src_1",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_1",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_1",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_1",
+          "CLM_FROM_DT": "CLM_FROM_DT_src_1",
+          "CLM_THRU_DT": "CLM_THRU_DT_src_1",
+          "CLM_BILL_FAC_TYPE_CD": "CLM_BILL_FAC_TYPE_CD_src_1",
+          "CLM_BILL_CLSFCTN_CD": "CLM_BILL_CLSFCTN_CD_src_1",
+          "PRNCPL_DGNS_CD": "PRNCPL_DGNS_CD_src_1",
+          "ADMTG_DGNS_CD": "ADMTG_DGNS_CD_src_1",
+          "CLM_MDCR_NPMT_RSN_CD": "CLM_MDCR_NPMT_RSN_CD_src_1",
+          "CLM_PMT_AMT": "CLM_PMT_AMT_src_1",
+          "CLM_NCH_PRMRY_PYR_CD": "CLM_NCH_PRMRY_PYR_CD_src_1",
+          "PRVDR_FAC_FIPS_ST_CD": "PRVDR_FAC_FIPS_ST_CD_src_1",
+          "BENE_PTNT_STUS_CD": "BENE_PTNT_STUS_CD_src_1",
+          "DGNS_DRG_CD": "DGNS_DRG_CD_src_1",
+          "CLM_OP_SRVC_TYPE_CD": "CLM_OP_SRVC_TYPE_CD_src_1",
+          "FAC_PRVDR_NPI_NUM": "FAC_PRVDR_NPI_NUM_src_1",
+          "OPRTG_PRVDR_NPI_NUM": "OPRTG_PRVDR_NPI_NUM_src_1",
+          "ATNDG_PRVDR_NPI_NUM": "ATNDG_PRVDR_NPI_NUM_src_1",
+          "OTHR_PRVDR_NPI_NUM": "OTHR_PRVDR_NPI_NUM_src_1",
+          "CLM_ADJSMT_TYPE_CD": "CLM_ADJSMT_TYPE_CD_src_1",
+          "CLM_EFCTV_DT": "CLM_EFCTV_DT_src_1",
+          "CLM_IDR_LD_DT": "CLM_IDR_LD_DT_src_1",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_1",
+          "CLM_ADMSN_TYPE_CD": "CLM_ADMSN_TYPE_CD_src_1",
+          "CLM_ADMSN_SRC_CD": "CLM_ADMSN_SRC_CD_src_1",
+          "CLM_BILL_FREQ_CD": "CLM_BILL_FREQ_CD_src_1",
+          "CLM_QUERY_CD": "CLM_QUERY_CD_src_1",
+          "DGNS_PRCDR_ICD_IND": "DGNS_PRCDR_ICD_IND_src_1",
+          "CLM_MDCR_INSTNL_TOT_CHRG_AMT": "CLM_MDCR_INSTNL_TOT_CHRG_AMT_src_1",
+          "CLM_MDCR_IP_PPS_CPTL_IME_AMT": "CLM_MDCR_IP_PPS_CPTL_IME_AMT_src_1",
+          "CLM_OPRTNL_IME_AMT": "CLM_OPRTNL_IME_AMT_src_1",
+          "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT": "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT_src_1",
+          "CLM_HIPPS_UNCOMPD_CARE_AMT": "CLM_HIPPS_UNCOMPD_CARE_AMT_src_1",
+          "CLM_OPRTNL_DSPRPRTNT_AMT": "CLM_OPRTNL_DSPRPRTNT_AMT_src_1",
+          "CLM_BLG_PRVDR_OSCAR_NUM": "CLM_BLG_PRVDR_OSCAR_NUM_src_1",
+          "CLM_BLG_PRVDR_NPI_NUM": "CLM_BLG_PRVDR_NPI_NUM_src_1",
+          "CLM_OPRTG_PRVDR_NPI_NUM": "CLM_OPRTG_PRVDR_NPI_NUM_src_1",
+          "CLM_ATNDG_PRVDR_NPI_NUM": "CLM_ATNDG_PRVDR_NPI_NUM_src_1",
+          "CLM_OTHR_PRVDR_NPI_NUM": "CLM_OTHR_PRVDR_NPI_NUM_src_1",
+          "CLM_CNTL_NUM": "CLM_CNTL_NUM_src_1",
+          "CLM_ORG_CNTL_NUM": "CLM_ORG_CNTL_NUM_src_1",
+          "CLM_CNTRCTR_NUM": "CLM_CNTRCTR_NUM_src_1",
+          "corrupt_record": "corrupt_record_src_1",
+          "batch_id": "batch_id_src_1",
+          "feed_name": "feed_name_src_1",
+          "ingest_ts": "ingest_ts_src_1",
+          "ingest_year": "ingest_year_src_1",
+          "ingest_month": "ingest_month_src_1",
+          "ingest_day": "ingest_day_src_1"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_FAC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_CLSFCTN_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRNCPL_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "ADMTG_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_NPMT_RSN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PMT_AMT",
+            "type": "decimal(16,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NCH_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_FAC_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PTNT_STUS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_DRG_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OP_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "FAC_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "ATNDG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADMSN_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADMSN_SRC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BILL_FREQ_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_QUERY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_INSTNL_TOT_CHRG_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_CPTL_IME_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_IME_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_PPS_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_HIPPS_UNCOMPD_CARE_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_DSPRPRTNT_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ATNDG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OTHR_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ORG_CNTL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
       },
       {
-        "data_src_id": 718,
-        "label": "claim_adjudication \u00b7 cclf_silver_raw.claim_adjudication"
+        "name": "p_d0284_aco_zc1y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc1y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_1) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc1y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc1y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_1 = max_batch_id AND (corrupt_record_src_1 IS NULL OR corrupt_record_src_1 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc2y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc2y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_2",
+          "CLM_LINE_NUM": "CLM_LINE_NUM_src_2",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_2",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_2",
+          "CLM_LINE_PROD_REV_CTR_CD": "CLM_LINE_PROD_REV_CTR_CD_src_2",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_2",
+          "PRVDR_OSCAR_NUM": "PRVDR_OSCAR_NUM_src_2",
+          "CLM_LINE_SRVC_UNIT_QTY": "CLM_LINE_SRVC_UNIT_QTY_src_2",
+          "CLM_LINE_CVRD_PD_AMT": "CLM_LINE_CVRD_PD_AMT_src_2",
+          "HCPCS_1_MDFR_CD": "HCPCS_1_MDFR_CD_src_2",
+          "HCPCS_2_MDFR_CD": "HCPCS_2_MDFR_CD_src_2",
+          "HCPCS_3_MDFR_CD": "HCPCS_3_MDFR_CD_src_2",
+          "HCPCS_4_MDFR_CD": "HCPCS_4_MDFR_CD_src_2",
+          "HCPCS_5_MDFR_CD": "HCPCS_5_MDFR_CD_src_2",
+          "CLM_REV_APC_HIPPS_CD": "CLM_REV_APC_HIPPS_CD_src_2",
+          "corrupt_record": "corrupt_record_src_2",
+          "batch_id": "batch_id_src_2",
+          "feed_name": "feed_name_src_2",
+          "ingest_ts": "ingest_ts_src_2",
+          "ingest_year": "ingest_year_src_2",
+          "ingest_month": "ingest_month_src_2",
+          "ingest_day": "ingest_day_src_2"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_PROD_REV_CTR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_REV_APC_HIPPS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc2y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc2y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_2) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc2y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc2y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_2 = max_batch_id AND (corrupt_record_src_2 IS NULL OR corrupt_record_src_2 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc3y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc3y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_3",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_3",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_3",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_3",
+          "CLM_VAL_SQNC_NUM": "CLM_VAL_SQNC_NUM_src_3",
+          "CLM_PRCDR_CD": "CLM_PRCDR_CD_src_3",
+          "CLM_PRCDR_PRFRM_DT": "CLM_PRCDR_PRFRM_DT_src_3",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_3",
+          "PRVDR_OSCAR_NUM": "PRVDR_OSCAR_NUM_src_3",
+          "CLM_FROM_DT": "CLM_FROM_DT_src_3",
+          "CLM_THRU_DT": "CLM_THRU_DT_src_3",
+          "DGNS_PRCDR_ICD_IND": "DGNS_PRCDR_ICD_IND_src_3",
+          "CLM_BLG_PRVDR_OSCAR_NUM": "CLM_BLG_PRVDR_OSCAR_NUM_src_3",
+          "corrupt_record": "corrupt_record_src_3",
+          "batch_id": "batch_id_src_3",
+          "feed_name": "feed_name_src_3",
+          "ingest_ts": "ingest_ts_src_3",
+          "ingest_year": "ingest_year_src_3",
+          "ingest_month": "ingest_month_src_3",
+          "ingest_day": "ingest_day_src_3"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCDR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCDR_PRFRM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc3y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc3y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_3) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc3y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc3y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_3 = max_batch_id AND (corrupt_record_src_3 IS NULL OR corrupt_record_src_3 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc4y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc4y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_4",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_4",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_4",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_4",
+          "CLM_PROD_TYPE_CD": "CLM_PROD_TYPE_CD_src_4",
+          "CLM_VAL_SQNC_NUM": "CLM_VAL_SQNC_NUM_src_4",
+          "CLM_DGNS_CD": "CLM_DGNS_CD_src_4",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_4",
+          "PRVDR_OSCAR_NUM": "PRVDR_OSCAR_NUM_src_4",
+          "CLM_FROM_DT": "CLM_FROM_DT_src_4",
+          "CLM_THRU_DT": "CLM_THRU_DT_src_4",
+          "CLM_POA_IND": "CLM_POA_IND_src_4",
+          "DGNS_PRCDR_ICD_IND": "DGNS_PRCDR_ICD_IND_src_4",
+          "CLM_BLG_PRVDR_OSCAR_NUM": "CLM_BLG_PRVDR_OSCAR_NUM_src_4",
+          "corrupt_record": "corrupt_record_src_4",
+          "batch_id": "batch_id_src_4",
+          "feed_name": "feed_name_src_4",
+          "ingest_ts": "ingest_ts_src_4",
+          "ingest_year": "ingest_year_src_4",
+          "ingest_month": "ingest_month_src_4",
+          "ingest_day": "ingest_day_src_4"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PROD_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_VAL_SQNC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POA_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_OSCAR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc4y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc4y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_4) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc4y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc4y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_4 = max_batch_id AND (corrupt_record_src_4 IS NULL OR corrupt_record_src_4 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc5y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc5y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_5",
+          "CLM_LINE_NUM": "CLM_LINE_NUM_src_5",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_5",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_5",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_5",
+          "CLM_FROM_DT": "CLM_FROM_DT_src_5",
+          "CLM_THRU_DT": "CLM_THRU_DT_src_5",
+          "RNDRG_PRVDR_TYPE_CD": "RNDRG_PRVDR_TYPE_CD_src_5",
+          "RNDRG_PRVDR_FIPS_ST_CD": "RNDRG_PRVDR_FIPS_ST_CD_src_5",
+          "CLM_PRVDR_SPCLTY_CD": "CLM_PRVDR_SPCLTY_CD_src_5",
+          "CLM_FED_TYPE_SRVC_CD": "CLM_FED_TYPE_SRVC_CD_src_5",
+          "CLM_POS_CD": "CLM_POS_CD_src_5",
+          "CLM_LINE_FROM_DT": "CLM_LINE_FROM_DT_src_5",
+          "CLM_LINE_THRU_DT": "CLM_LINE_THRU_DT_src_5",
+          "CLM_LINE_HCPCS_CD": "CLM_LINE_HCPCS_CD_src_5",
+          "CLM_LINE_CVRD_PD_AMT": "CLM_LINE_CVRD_PD_AMT_src_5",
+          "CLM_LINE_PRMRY_PYR_CD": "CLM_LINE_PRMRY_PYR_CD_src_5",
+          "CLM_LINE_DGNS_CD": "CLM_LINE_DGNS_CD_src_5",
+          "CLM_RNDRG_PRVDR_TAX_NUM": "CLM_RNDRG_PRVDR_TAX_NUM_src_5",
+          "RNDRG_PRVDR_NPI_NUM": "RNDRG_PRVDR_NPI_NUM_src_5",
+          "CLM_CARR_PMT_DNL_CD": "CLM_CARR_PMT_DNL_CD_src_5",
+          "CLM_PRCSG_IND_CD": "CLM_PRCSG_IND_CD_src_5",
+          "CLM_ADJSMT_TYPE_CD": "CLM_ADJSMT_TYPE_CD_src_5",
+          "CLM_EFCTV_DT": "CLM_EFCTV_DT_src_5",
+          "CLM_IDR_LD_DT": "CLM_IDR_LD_DT_src_5",
+          "CLM_CNTL_NUM": "CLM_CNTL_NUM_src_5",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_5",
+          "CLM_LINE_ALOWD_CHRG_AMT": "CLM_LINE_ALOWD_CHRG_AMT_src_5",
+          "CLM_LINE_SRVC_UNIT_QTY": "CLM_LINE_SRVC_UNIT_QTY_src_5",
+          "HCPCS_1_MDFR_CD": "HCPCS_1_MDFR_CD_src_5",
+          "HCPCS_2_MDFR_CD": "HCPCS_2_MDFR_CD_src_5",
+          "HCPCS_3_MDFR_CD": "HCPCS_3_MDFR_CD_src_5",
+          "HCPCS_4_MDFR_CD": "HCPCS_4_MDFR_CD_src_5",
+          "HCPCS_5_MDFR_CD": "HCPCS_5_MDFR_CD_src_5",
+          "CLM_DISP_CD": "CLM_DISP_CD_src_5",
+          "CLM_DGNS_1_CD": "CLM_DGNS_1_CD_src_5",
+          "CLM_DGNS_2_CD": "CLM_DGNS_2_CD_src_5",
+          "CLM_DGNS_3_CD": "CLM_DGNS_3_CD_src_5",
+          "CLM_DGNS_4_CD": "CLM_DGNS_4_CD_src_5",
+          "CLM_DGNS_5_CD": "CLM_DGNS_5_CD_src_5",
+          "CLM_DGNS_6_CD": "CLM_DGNS_6_CD_src_5",
+          "CLM_DGNS_7_CD": "CLM_DGNS_7_CD_src_5",
+          "CLM_DGNS_8_CD": "CLM_DGNS_8_CD_src_5",
+          "DGNS_PRCDR_ICD_IND": "DGNS_PRCDR_ICD_IND_src_5",
+          "CLM_DGNS_9_CD": "CLM_DGNS_9_CD_src_5",
+          "CLM_DGNS_10_CD": "CLM_DGNS_10_CD_src_5",
+          "CLM_DGNS_11_CD": "CLM_DGNS_11_CD_src_5",
+          "CLM_DGNS_12_CD": "CLM_DGNS_12_CD_src_5",
+          "HCPCS_BETOS_CD": "HCPCS_BETOS_CD_src_5",
+          "CLM_RNDRG_PRVDR_NPI_NUM": "CLM_RNDRG_PRVDR_NPI_NUM_src_5",
+          "CLM_RFRG_PRVDR_NPI_NUM": "CLM_RFRG_PRVDR_NPI_NUM_src_5",
+          "CLM_CNTRCTR_NUM": "CLM_CNTRCTR_NUM_src_5",
+          "corrupt_record": "corrupt_record_src_5",
+          "batch_id": "batch_id_src_5",
+          "feed_name": "feed_name_src_5",
+          "ingest_ts": "ingest_ts_src_5",
+          "ingest_year": "ingest_year_src_5",
+          "ingest_month": "ingest_month_src_5",
+          "ingest_day": "ingest_day_src_5"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_FIPS_ST_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRVDR_SPCLTY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_DGNS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_TAX_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(15,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_1_MDFR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_2_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_3_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_4_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_5_MDFR_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_1_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_2_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_3_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_4_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_5_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_6_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_7_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_8_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "DGNS_PRCDR_ICD_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_9_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_10_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_11_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DGNS_12_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "HCPCS_BETOS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RNDRG_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTRCTR_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc5y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc5y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_5) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc5y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc5y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_5 = max_batch_id AND (corrupt_record_src_5 IS NULL OR corrupt_record_src_5 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc6y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc6y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_6",
+          "CLM_LINE_NUM": "CLM_LINE_NUM_src_6",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_6",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_6",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_6",
+          "CLM_FROM_DT": "CLM_FROM_DT_src_6",
+          "CLM_THRU_DT": "CLM_THRU_DT_src_6",
+          "CLM_FED_TYPE_SRVC_CD": "CLM_FED_TYPE_SRVC_CD_src_6",
+          "CLM_POS_CD": "CLM_POS_CD_src_6",
+          "CLM_LINE_FROM_DT": "CLM_LINE_FROM_DT_src_6",
+          "CLM_LINE_THRU_DT": "CLM_LINE_THRU_DT_src_6",
+          "CLM_LINE_HCPCS_CD": "CLM_LINE_HCPCS_CD_src_6",
+          "CLM_LINE_CVRD_PD_AMT": "CLM_LINE_CVRD_PD_AMT_src_6",
+          "CLM_PRMRY_PYR_CD": "CLM_PRMRY_PYR_CD_src_6",
+          "PAYTO_PRVDR_NPI_NUM": "PAYTO_PRVDR_NPI_NUM_src_6",
+          "ORDRG_PRVDR_NPI_NUM": "ORDRG_PRVDR_NPI_NUM_src_6",
+          "CLM_CARR_PMT_DNL_CD": "CLM_CARR_PMT_DNL_CD_src_6",
+          "CLM_PRCSG_IND_CD": "CLM_PRCSG_IND_CD_src_6",
+          "CLM_ADJSMT_TYPE_CD": "CLM_ADJSMT_TYPE_CD_src_6",
+          "CLM_EFCTV_DT": "CLM_EFCTV_DT_src_6",
+          "CLM_IDR_LD_DT": "CLM_IDR_LD_DT_src_6",
+          "CLM_CNTL_NUM": "CLM_CNTL_NUM_src_6",
+          "BENE_EQTBL_BIC_HICN_NUM": "BENE_EQTBL_BIC_HICN_NUM_src_6",
+          "CLM_LINE_ALOWD_CHRG_AMT": "CLM_LINE_ALOWD_CHRG_AMT_src_6",
+          "CLM_DISP_CD": "CLM_DISP_CD_src_6",
+          "CLM_BLG_PRVDR_NPI_NUM": "CLM_BLG_PRVDR_NPI_NUM_src_6",
+          "CLM_RFRG_PRVDR_NPI_NUM": "CLM_RFRG_PRVDR_NPI_NUM_src_6",
+          "corrupt_record": "corrupt_record_src_6",
+          "batch_id": "batch_id_src_6",
+          "feed_name": "feed_name_src_6",
+          "ingest_ts": "ingest_ts_src_6",
+          "ingest_year": "ingest_year_src_6",
+          "ingest_month": "ingest_month_src_6",
+          "ingest_day": "ingest_day_src_6"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_FED_TYPE_SRVC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_POS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_THRU_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_HCPCS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_CVRD_PD_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRMRY_PYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "PAYTO_PRVDR_NPI_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "ORDRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CARR_PMT_DNL_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRCSG_IND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_CNTL_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_EQTBL_BIC_HICN_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_ALOWD_CHRG_AMT",
+            "type": "decimal(15,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DISP_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RFRG_PRVDR_NPI_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc6y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc6y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_6) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc6y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc6y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_6 = max_batch_id AND (corrupt_record_src_6 IS NULL OR corrupt_record_src_6 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc7y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc7y26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_7",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_7",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_7",
+          "CLM_LINE_NDC_CD": "CLM_LINE_NDC_CD_src_7",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_7",
+          "CLM_LINE_FROM_DT": "CLM_LINE_FROM_DT_src_7",
+          "PRVDR_SRVC_ID_QLFYR_CD": "PRVDR_SRVC_ID_QLFYR_CD_src_7",
+          "CLM_SRVC_PRVDR_GNRC_ID_NUM": "CLM_SRVC_PRVDR_GNRC_ID_NUM_src_7",
+          "CLM_DSPNSNG_STUS_CD": "CLM_DSPNSNG_STUS_CD_src_7",
+          "CLM_DAW_PROD_SLCTN_CD": "CLM_DAW_PROD_SLCTN_CD_src_7",
+          "CLM_LINE_SRVC_UNIT_QTY": "CLM_LINE_SRVC_UNIT_QTY_src_7",
+          "CLM_LINE_DAYS_SUPLY_QTY": "CLM_LINE_DAYS_SUPLY_QTY_src_7",
+          "PRVDR_PRSBNG_ID_QLFYR_CD": "PRVDR_PRSBNG_ID_QLFYR_CD_src_7",
+          "CLM_LINE_BENE_PMT_AMT": "CLM_LINE_BENE_PMT_AMT_src_7",
+          "CLM_ADJSMT_TYPE_CD": "CLM_ADJSMT_TYPE_CD_src_7",
+          "CLM_EFCTV_DT": "CLM_EFCTV_DT_src_7",
+          "CLM_IDR_LD_DT": "CLM_IDR_LD_DT_src_7",
+          "CLM_LINE_RX_SRVC_RFRNC_NUM": "CLM_LINE_RX_SRVC_RFRNC_NUM_src_7",
+          "CLM_LINE_RX_FILL_NUM": "CLM_LINE_RX_FILL_NUM_src_7",
+          "CLM_PHRMCY_SRVC_TYPE_CD": "CLM_PHRMCY_SRVC_TYPE_CD_src_7",
+          "CLM_PRSBNG_PRVDR_GNRC_ID_NUM": "CLM_PRSBNG_PRVDR_GNRC_ID_NUM_src_7",
+          "corrupt_record": "corrupt_record_src_7",
+          "batch_id": "batch_id_src_7",
+          "feed_name": "feed_name_src_7",
+          "ingest_ts": "ingest_ts_src_7",
+          "ingest_year": "ingest_year_src_7",
+          "ingest_month": "ingest_month_src_7",
+          "ingest_day": "ingest_day_src_7"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NDC_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_SRVC_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SRVC_PRVDR_GNRC_ID_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DSPNSNG_STUS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DAW_PROD_SLCTN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_SRVC_UNIT_QTY",
+            "type": "decimal(21,4)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_DAYS_SUPLY_QTY",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVDR_PRSBNG_ID_QLFYR_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_BENE_PMT_AMT",
+            "type": "decimal(11,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ADJSMT_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_EFCTV_DT",
+            "type": "date",
+            "nullable": false
+          },
+          {
+            "name": "CLM_IDR_LD_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_RX_SRVC_RFRNC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_RX_FILL_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PHRMCY_SRVC_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PRSBNG_PRVDR_GNRC_ID_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc7y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc7y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_7) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc7y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc7y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_7 = max_batch_id AND (corrupt_record_src_7 IS NULL OR corrupt_record_src_7 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc8y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc8y26_d260501"
+        },
+        "rename_columns": {
+          "BENE_MBI_ID": "BENE_MBI_ID_src_8",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_8",
+          "BENE_FIPS_STATE_CD": "BENE_FIPS_STATE_CD_src_8",
+          "BENE_FIPS_CNTY_CD": "BENE_FIPS_CNTY_CD_src_8",
+          "BENE_ZIP_CD": "BENE_ZIP_CD_src_8",
+          "BENE_DOB": "BENE_DOB_src_8",
+          "BENE_SEX_CD": "BENE_SEX_CD_src_8",
+          "BENE_RACE_CD": "BENE_RACE_CD_src_8",
+          "BENE_AGE": "BENE_AGE_src_8",
+          "BENE_MDCR_STUS_CD": "BENE_MDCR_STUS_CD_src_8",
+          "BENE_DUAL_STUS_CD": "BENE_DUAL_STUS_CD_src_8",
+          "BENE_DEATH_DT": "BENE_DEATH_DT_src_8",
+          "BENE_RNG_BGN_DT": "BENE_RNG_BGN_DT_src_8",
+          "BENE_RNG_END_DT": "BENE_RNG_END_DT_src_8",
+          "BENE_1ST_NAME": "BENE_1ST_NAME_src_8",
+          "BENE_MIDL_NAME": "BENE_MIDL_NAME_src_8",
+          "BENE_LAST_NAME": "BENE_LAST_NAME_src_8",
+          "BENE_ORGNL_ENTLMT_RSN_CD": "BENE_ORGNL_ENTLMT_RSN_CD_src_8",
+          "BENE_ENTLMT_BUYIN_IND": "BENE_ENTLMT_BUYIN_IND_src_8",
+          "BENE_PART_A_ENRLMT_BGN_DT": "BENE_PART_A_ENRLMT_BGN_DT_src_8",
+          "BENE_PART_B_ENRLMT_BGN_DT": "BENE_PART_B_ENRLMT_BGN_DT_src_8",
+          "BENE_LINE_1_ADR": "BENE_LINE_1_ADR_src_8",
+          "BENE_LINE_2_ADR": "BENE_LINE_2_ADR_src_8",
+          "BENE_LINE_3_ADR": "BENE_LINE_3_ADR_src_8",
+          "BENE_LINE_4_ADR": "BENE_LINE_4_ADR_src_8",
+          "BENE_LINE_5_ADR": "BENE_LINE_5_ADR_src_8",
+          "BENE_LINE_6_ADR": "BENE_LINE_6_ADR_src_8",
+          "GEO_ZIP_PLC_NAME": "GEO_ZIP_PLC_NAME_src_8",
+          "GEO_USPS_STATE_CD": "GEO_USPS_STATE_CD_src_8",
+          "GEO_ZIP5_CD": "GEO_ZIP5_CD_src_8",
+          "GEO_ZIP4_CD": "GEO_ZIP4_CD_src_8",
+          "corrupt_record": "corrupt_record_src_8",
+          "batch_id": "batch_id_src_8",
+          "feed_name": "feed_name_src_8",
+          "ingest_ts": "ingest_ts_src_8",
+          "ingest_year": "ingest_year_src_8",
+          "ingest_month": "ingest_month_src_8",
+          "ingest_day": "ingest_day_src_8"
+        },
+        "schema": [
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_FIPS_STATE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_FIPS_CNTY_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ZIP_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DOB",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_SEX_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RACE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_AGE",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MDCR_STUS_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DUAL_STUS_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_DEATH_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RNG_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_RNG_END_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_1ST_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MIDL_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LAST_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ORGNL_ENTLMT_RSN_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_ENTLMT_BUYIN_IND",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PART_A_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_PART_B_ENRLMT_BGN_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_1_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_2_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_3_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_4_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_5_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_LINE_6_ADR",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP_PLC_NAME",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_USPS_STATE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP5_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "GEO_ZIP4_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc8y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc8y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_8) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc8y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc8y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_8 = max_batch_id AND (corrupt_record_src_8 IS NULL OR corrupt_record_src_8 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zc9y26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zc9y26_d260501"
+        },
+        "rename_columns": {
+          "HICN_MBI_XREF_IND": "HICN_MBI_XREF_IND_src_9",
+          "CRNT_NUM": "CRNT_NUM_src_9",
+          "PRVS_NUM": "PRVS_NUM_src_9",
+          "PRVS_ID_EFCTV_DT": "PRVS_ID_EFCTV_DT_src_9",
+          "PRVS_ID_OBSLT_DT": "PRVS_ID_OBSLT_DT_src_9",
+          "corrupt_record": "corrupt_record_src_9",
+          "batch_id": "batch_id_src_9",
+          "feed_name": "feed_name_src_9",
+          "ingest_ts": "ingest_ts_src_9",
+          "ingest_year": "ingest_year_src_9",
+          "ingest_month": "ingest_month_src_9",
+          "ingest_day": "ingest_day_src_9"
+        },
+        "schema": [
+          {
+            "name": "HICN_MBI_XREF_IND",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CRNT_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_ID_EFCTV_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PRVS_ID_OBSLT_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zc9y26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zc9y26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_9) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zc9y26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zc9y26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_9 = max_batch_id AND (corrupt_record_src_9 IS NULL OR corrupt_record_src_9 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zcay26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zcay26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_10",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_10",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_10",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_10",
+          "CLM_ACTV_CARE_FROM_DT": "CLM_ACTV_CARE_FROM_DT_src_10",
+          "CLM_NGACO_PBPMT_SW": "CLM_NGACO_PBPMT_SW_src_10",
+          "CLM_NGACO_PDSCHRG_HCBS_SW": "CLM_NGACO_PDSCHRG_HCBS_SW_src_10",
+          "CLM_NGACO_SNF_WVR_SW": "CLM_NGACO_SNF_WVR_SW_src_10",
+          "CLM_NGACO_TLHLTH_SW": "CLM_NGACO_TLHLTH_SW_src_10",
+          "CLM_NGACO_CPTATN_SW": "CLM_NGACO_CPTATN_SW_src_10",
+          "CLM_DEMO_1ST_NUM": "CLM_DEMO_1ST_NUM_src_10",
+          "CLM_DEMO_2ND_NUM": "CLM_DEMO_2ND_NUM_src_10",
+          "CLM_DEMO_3RD_NUM": "CLM_DEMO_3RD_NUM_src_10",
+          "CLM_DEMO_4TH_NUM": "CLM_DEMO_4TH_NUM_src_10",
+          "CLM_DEMO_5TH_NUM": "CLM_DEMO_5TH_NUM_src_10",
+          "CLM_PBP_INCLSN_AMT": "CLM_PBP_INCLSN_AMT_src_10",
+          "CLM_PBP_RDCTN_AMT": "CLM_PBP_RDCTN_AMT_src_10",
+          "CLM_NGACO_CMG_WVR_SW": "CLM_NGACO_CMG_WVR_SW_src_10",
+          "CLM_INSTNL_PER_DIEM_AMT": "CLM_INSTNL_PER_DIEM_AMT_src_10",
+          "CLM_MDCR_IP_BENE_DDCTBL_AMT": "CLM_MDCR_IP_BENE_DDCTBL_AMT_src_10",
+          "CLM_MDCR_COINSRNC_AMT": "CLM_MDCR_COINSRNC_AMT_src_10",
+          "CLM_BLOOD_LBLTY_AMT": "CLM_BLOOD_LBLTY_AMT_src_10",
+          "CLM_INSTNL_PRFNL_AMT": "CLM_INSTNL_PRFNL_AMT_src_10",
+          "CLM_NCVRD_CHRG_AMT": "CLM_NCVRD_CHRG_AMT_src_10",
+          "CLM_MDCR_DDCTBL_AMT": "CLM_MDCR_DDCTBL_AMT_src_10",
+          "CLM_RLT_COND_CD": "CLM_RLT_COND_CD_src_10",
+          "CLM_OPRTNL_OUTLR_AMT": "CLM_OPRTNL_OUTLR_AMT_src_10",
+          "CLM_MDCR_NEW_TECH_AMT": "CLM_MDCR_NEW_TECH_AMT_src_10",
+          "CLM_ISLET_ISOLN_AMT": "CLM_ISLET_ISOLN_AMT_src_10",
+          "CLM_SQSTRTN_RDCTN_AMT": "CLM_SQSTRTN_RDCTN_AMT_src_10",
+          "CLM_1_REV_CNTR_ANSI_RSN_CD": "CLM_1_REV_CNTR_ANSI_RSN_CD_src_10",
+          "CLM_1_REV_CNTR_ANSI_GRP_CD": "CLM_1_REV_CNTR_ANSI_GRP_CD_src_10",
+          "CLM_MIPS_PMT_AMT": "CLM_MIPS_PMT_AMT_src_10",
+          "corrupt_record": "corrupt_record_src_10",
+          "batch_id": "batch_id_src_10",
+          "feed_name": "feed_name_src_10",
+          "ingest_ts": "ingest_ts_src_10",
+          "ingest_year": "ingest_year_src_10",
+          "ingest_month": "ingest_month_src_10",
+          "ingest_day": "ingest_day_src_10"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ACTV_CARE_FROM_DT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_PBPMT_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_INSTNL_PER_DIEM_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_IP_BENE_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_COINSRNC_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_BLOOD_LBLTY_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_INSTNL_PRFNL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NCVRD_CHRG_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_RLT_COND_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_OPRTNL_OUTLR_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_NEW_TECH_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_ISLET_ISOLN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_RSN_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_1_REV_CNTR_ANSI_GRP_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MIPS_PMT_AMT",
+            "type": "decimal(18,2)",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zcay26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcay26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_10) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zcay26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zcay26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_10 = max_batch_id AND (corrupt_record_src_10 IS NULL OR corrupt_record_src_10 = '')"
+      },
+      {
+        "name": "p_d0284_aco_zcby26_d260501",
+        "transformation": "Reader",
+        "dependent_on": [],
+        "source": {
+          "$ref": "#/sources/p_d0284_aco_zcby26_d260501"
+        },
+        "rename_columns": {
+          "CUR_CLM_UNIQ_ID": "CUR_CLM_UNIQ_ID_src_11",
+          "CLM_LINE_NUM": "CLM_LINE_NUM_src_11",
+          "BENE_MBI_ID": "BENE_MBI_ID_src_11",
+          "BENE_HIC_NUM": "BENE_HIC_NUM_src_11",
+          "CLM_TYPE_CD": "CLM_TYPE_CD_src_11",
+          "CLM_LINE_NGACO_PBPMT_SW": "CLM_LINE_NGACO_PBPMT_SW_src_11",
+          "CLM_LINE_NGACO_PDSCHRG_HCBS_SW": "CLM_LINE_NGACO_PDSCHRG_HCBS_SW_src_11",
+          "CLM_LINE_NGACO_SNF_WVR_SW": "CLM_LINE_NGACO_SNF_WVR_SW_src_11",
+          "CLM_LINE_NGACO_TLHLTH_SW": "CLM_LINE_NGACO_TLHLTH_SW_src_11",
+          "CLM_LINE_NGACO_CPTATN_SW": "CLM_LINE_NGACO_CPTATN_SW_src_11",
+          "CLM_DEMO_1ST_NUM": "CLM_DEMO_1ST_NUM_src_11",
+          "CLM_DEMO_2ND_NUM": "CLM_DEMO_2ND_NUM_src_11",
+          "CLM_DEMO_3RD_NUM": "CLM_DEMO_3RD_NUM_src_11",
+          "CLM_DEMO_4TH_NUM": "CLM_DEMO_4TH_NUM_src_11",
+          "CLM_DEMO_5TH_NUM": "CLM_DEMO_5TH_NUM_src_11",
+          "CLM_PBP_INCLSN_AMT": "CLM_PBP_INCLSN_AMT_src_11",
+          "CLM_PBP_RDCTN_AMT": "CLM_PBP_RDCTN_AMT_src_11",
+          "CLM_NGACO_CMG_WVR_SW": "CLM_NGACO_CMG_WVR_SW_src_11",
+          "CLM_MDCR_DDCTBL_AMT": "CLM_MDCR_DDCTBL_AMT_src_11",
+          "CLM_SQSTRTN_RDCTN_AMT": "CLM_SQSTRTN_RDCTN_AMT_src_11",
+          "corrupt_record": "corrupt_record_src_11",
+          "batch_id": "batch_id_src_11",
+          "feed_name": "feed_name_src_11",
+          "ingest_ts": "ingest_ts_src_11",
+          "ingest_year": "ingest_year_src_11",
+          "ingest_month": "ingest_month_src_11",
+          "ingest_day": "ingest_day_src_11"
+        },
+        "schema": [
+          {
+            "name": "CUR_CLM_UNIQ_ID",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_MBI_ID",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "BENE_HIC_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_TYPE_CD",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_PBPMT_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_PDSCHRG_HCBS_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_SNF_WVR_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_TLHLTH_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_LINE_NGACO_CPTATN_SW",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_1ST_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_2ND_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_3RD_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_4TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_DEMO_5TH_NUM",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_INCLSN_AMT",
+            "type": "decimal(13,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_PBP_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "CLM_NGACO_CMG_WVR_SW",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "CLM_MDCR_DDCTBL_AMT",
+            "type": "decimal(17,2)",
+            "nullable": false
+          },
+          {
+            "name": "CLM_SQSTRTN_RDCTN_AMT",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "corrupt_record",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "batch_id",
+            "type": "biginteger",
+            "nullable": true
+          },
+          {
+            "name": "feed_name",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "ingest_ts",
+            "type": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "ingest_year",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_month",
+            "type": "integer",
+            "nullable": true
+          },
+          {
+            "name": "ingest_day",
+            "type": "integer",
+            "nullable": true
+          }
+        ],
+        "read_options": {}
+      },
+      {
+        "name": "p_d0284_aco_zcby26_d260501_MaxBatchExpr",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501"
+        ],
+        "derived_fields": [
+          {
+            "name": "max_batch_id",
+            "expression": "max(batch_id_src_11) OVER ()"
+          }
+        ]
+      },
+      {
+        "name": "p_d0284_aco_zcby26_d260501_IngestFilter",
+        "transformation": "Filter",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_MaxBatchExpr"
+        ],
+        "condition": "batch_id_src_11 = max_batch_id AND (corrupt_record_src_11 IS NULL OR corrupt_record_src_11 = '')"
+      },
+      {
+        "name": "patient_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "mbi_id",
+          "hicn",
+          "state_fips_code",
+          "county_fips_code",
+          "zip_code",
+          "date_of_birth",
+          "gender",
+          "race_code",
+          "mdcr_status_code",
+          "dual_status_code",
+          "deceased_date",
+          "bene_rng_bgn_dt",
+          "bene_rng_end_dt",
+          "first_name",
+          "middle_name",
+          "last_name",
+          "original_entitlement_reason_code",
+          "entitlement_buyin_indicator",
+          "part_a_enrollment_begin_date",
+          "part_b_enrollment_begin_date",
+          "address_line1",
+          "address_line2",
+          "address_line3",
+          "address_line4",
+          "address_line5",
+          "address_line6",
+          "city",
+          "state",
+          "zip5",
+          "zip4",
+          "record_hash",
+          "is_deleted",
+          "source_member_id"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          },
+          {
+            "name": "source_member_id",
+            "expression": "CAST(NULL AS STRING)"
+          }
+        ]
+      },
+      {
+        "name": "patient",
+        "transformation": "Writer",
+        "dependent_on": [
+          "patient_final"
+        ],
+        "target": {
+          "$ref": "#/targets/patient"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_header_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "claim_type",
+          "statement_from",
+          "statement_through",
+          "bill_type",
+          "claim_status",
+          "source_billing_org_id",
+          "discharge_status",
+          "drg_code",
+          "admission_source",
+          "billing_provider_npi",
+          "attending_provider_npi",
+          "claim_adjustment_type_cd",
+          "claim_effective_date",
+          "claim_received_date",
+          "admission_type",
+          "replaced_claim_id",
+          "admission_date",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_header",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_header_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_header"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_line_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "line_number",
+          "source_line_id",
+          "service_date",
+          "service_end_date",
+          "revenue_code",
+          "procedure_code",
+          "source_code_system",
+          "place_of_service",
+          "billed_units",
+          "modifier_1",
+          "modifier_2",
+          "modifier_3",
+          "modifier_4",
+          "modifier_5",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_line",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_line_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_line"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_procedure_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "procedure_sequence",
+          "source_procedure_code",
+          "procedure_date",
+          "source_procedure_code_system",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_procedure",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_procedure_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_procedure"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_diagnosis_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_diagnosis_code",
+          "source_diagnosis_code_system",
+          "diagnosis_sequence",
+          "diagnosis_type",
+          "poa_flag",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_diagnosis",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_diagnosis_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_diagnosis"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_provider_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_line_id",
+          "provider_scope",
+          "provider_role_code",
+          "provider_identifier_value",
+          "npi",
+          "tin",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_provider",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_provider_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_provider"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_adjudication_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "adjudication_category_code",
+          "adjudication_scope",
+          "amount",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_adjudication",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_adjudication_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_adjudication"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "claim_line_adjudication_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "source_line_id",
+          "adjudication_category_code",
+          "adjudication_reason_code",
+          "amount",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "claim_line_adjudication",
+        "transformation": "Writer",
+        "dependent_on": [
+          "claim_line_adjudication_final"
+        ],
+        "target": {
+          "$ref": "#/targets/claim_line_adjudication"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "pharmacy_claim_header_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "claim_type",
+          "claim_effective_date",
+          "claim_status",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "pharmacy_claim_header",
+        "transformation": "Writer",
+        "dependent_on": [
+          "pharmacy_claim_header_final"
+        ],
+        "target": {
+          "$ref": "#/targets/pharmacy_claim_header"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
+      },
+      {
+        "name": "pharmacy_claim_line_final",
+        "transformation": "Expression",
+        "dependent_on": [
+          "p_d0284_aco_zcby26_d260501_IngestFilter"
+        ],
+        "rename_columns": {},
+        "select_columns": [
+          "batch_id",
+          "created_by",
+          "created_at",
+          "updated_by",
+          "updated_at",
+          "source_system",
+          "silver_id",
+          "source_claim_id",
+          "line_number",
+          "service_date",
+          "ndc_code",
+          "source_drug_code",
+          "source_code_system",
+          "dispensing_facility_id",
+          "claim_status",
+          "quantity",
+          "days_supply",
+          "prescriber_id",
+          "member_responsibility",
+          "record_hash",
+          "is_deleted"
+        ],
+        "derived_fields": [
+          {
+            "name": "record_hash",
+            "expression": "CAST(NULL AS STRING)"
+          },
+          {
+            "name": "is_deleted",
+            "expression": "CAST(NULL AS BOOLEAN)"
+          }
+        ]
+      },
+      {
+        "name": "pharmacy_claim_line",
+        "transformation": "Writer",
+        "dependent_on": [
+          "pharmacy_claim_line_final"
+        ],
+        "target": {
+          "$ref": "#/targets/pharmacy_claim_line"
+        },
+        "write_options": {
+          "mode": "merge",
+          "createDisposition": "CREATE_IF_NEEDED",
+          "writeMethod": "direct"
+        }
       }
     ]
   },
