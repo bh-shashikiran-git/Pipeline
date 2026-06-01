@@ -19,8 +19,8 @@
   },
   "status": "active",
   "pipeline_version_id": null,
-  "bh_project_name": null,
-  "bh_github_username": null,
+  "bh_project_name": "demo_proj",
+  "bh_github_username": "bh-shashikiran-git",
   "pipeline_json": {
     "$schema": "https://json-schema.org/draft-07/schema#",
     "name": "silver_raw_tables_to_test_tables_load_260601_1187",
