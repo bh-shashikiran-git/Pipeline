@@ -1,6 +1,6 @@
 {
   "created_at": "2026-06-01T06:41:41.374228Z",
-  "updated_at": "2026-06-01T06:42:19.169096Z",
+  "updated_at": "2026-06-01T07:21:12.481025Z",
   "created_by": "kiran@bighammer.ai",
   "updated_by": "kiran@bighammer.ai",
   "is_deleted": false,
@@ -22,31 +22,15 @@
     "engine_type": "pyspark",
     "parameters": [
       {
-        "key": "safeharbor_vbp0211_inpatient_census_pg_report_cinqdownstate_20260428",
-        "value": "bhargs/ADT/safeharbor_VBP0211_Inpatient_Census_PG_report_CINQDOWNSTATE_20260428.xlsx"
-      },
-      {
         "key": "safeharbor_vbp0211_inpatient_census_pg_report_cinqupstate_20260429",
         "value": "bhargs/ADT/safeharbor_VBP0211_Inpatient_Census_PG_report_CINQUPSTATE_20260429.xlsx"
+      },
+      {
+        "key": "safeharbor_vbp0211_inpatient_census_pg_report_cinqdownstate_20260428",
+        "value": "bhargs/ADT/safeharbor_VBP0211_Inpatient_Census_PG_report_CINQDOWNSTATE_20260428.xlsx"
       }
     ],
     "connections": {
-      "landing_cinqdownstate_20260428_file_connection_obj570": {
-        "name": "landing_cinqdownstate_20260428_file_connection_obj570",
-        "connection_type": "azure_blob",
-        "container_name": "my-test-bucket",
-        "file_path_prefix": "",
-        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
-        "connection_config_id": 34
-      },
-      "bronze_cinqdownstate_20260428_db_connection_obj570": {
-        "name": "bronze_cinqdownstate_20260428_db_connection_obj570",
-        "connection_type": "DatabricksDeltaLake",
-        "catalog": "cinqdev",
-        "schema": "kiran",
-        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
-        "connection_config_id": 35
-      },
       "landing_cinqupstate_20260429_file_connection_obj571": {
         "name": "landing_cinqupstate_20260429_file_connection_obj571",
         "connection_type": "azure_blob",
@@ -62,18 +46,25 @@
         "schema": "kiran",
         "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
         "connection_config_id": 35
+      },
+      "landing_cinqdownstate_20260428_file_connection_obj570": {
+        "name": "landing_cinqdownstate_20260428_file_connection_obj570",
+        "connection_type": "azure_blob",
+        "container_name": "my-test-bucket",
+        "file_path_prefix": "",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureblob-azureblobconn22",
+        "connection_config_id": 34
+      },
+      "bronze_cinqdownstate_20260428_db_connection_obj570": {
+        "name": "bronze_cinqdownstate_20260428_db_connection_obj570",
+        "connection_type": "DatabricksDeltaLake",
+        "catalog": "cinqdev",
+        "schema": "kiran",
+        "secret_name": "bh-dev-westus3-kv-key-scope/bh-azureunity-azureunityconn22",
+        "connection_config_id": 35
       }
     },
     "sources": {
-      "landing_source_cinqdownstate_20260428_obj570": {
-        "name": "landing_source_cinqdownstate_20260428_obj570",
-        "source_type": "File",
-        "file_name": "${safeharbor_vbp0211_inpatient_census_pg_report_cinqdownstate_20260428}",
-        "connection": {
-          "$ref": "#/connections/landing_cinqdownstate_20260428_file_connection_obj570"
-        },
-        "data_src_id": 987
-      },
       "landing_source_cinqupstate_20260429_obj571": {
         "name": "landing_source_cinqupstate_20260429_obj571",
         "source_type": "File",
@@ -82,20 +73,18 @@
           "$ref": "#/connections/landing_cinqupstate_20260429_file_connection_obj571"
         },
         "data_src_id": 989
+      },
+      "landing_source_cinqdownstate_20260428_obj570": {
+        "name": "landing_source_cinqdownstate_20260428_obj570",
+        "source_type": "File",
+        "file_name": "${safeharbor_vbp0211_inpatient_census_pg_report_cinqdownstate_20260428}",
+        "connection": {
+          "$ref": "#/connections/landing_cinqdownstate_20260428_file_connection_obj570"
+        },
+        "data_src_id": 987
       }
     },
     "targets": {
-      "bronze_target_cinqdownstate_20260428_obj570": {
-        "name": "bronze_target_cinqdownstate_20260428_obj570",
-        "target_type": "Relational",
-        "table_name": "cinqdownstate_20260428",
-        "connection": {
-          "$ref": "#/connections/bronze_cinqdownstate_20260428_db_connection_obj570"
-        },
-        "load_mode": "append",
-        "schema": "kiran",
-        "data_src_id": 988
-      },
       "bronze_target_cinqupstate_20260429_obj571": {
         "name": "bronze_target_cinqupstate_20260429_obj571",
         "target_type": "Relational",
@@ -106,177 +95,20 @@
         "load_mode": "append",
         "schema": "kiran",
         "data_src_id": 990
+      },
+      "bronze_target_cinqdownstate_20260428_obj570": {
+        "name": "bronze_target_cinqdownstate_20260428_obj570",
+        "target_type": "Relational",
+        "table_name": "cinqdownstate_20260428",
+        "connection": {
+          "$ref": "#/connections/bronze_cinqdownstate_20260428_db_connection_obj570"
+        },
+        "load_mode": "append",
+        "schema": "kiran",
+        "data_src_id": 988
       }
     },
     "transformations": [
-      {
-        "name": "landing_read_cinqdownstate_20260428_obj570",
-        "transformation": "Reader",
-        "source": {
-          "$ref": "#/sources/landing_source_cinqdownstate_20260428_obj570"
-        },
-        "file_type": "Excel",
-        "read_options": {
-          "fetch_size": 10000,
-          "inferSchema": false,
-          "sheetName": "Sheet1",
-          "sheet_name": "Sheet1",
-          "useHeader": true,
-          "timestampFormat": "yyyy-MM-dd HH:mm:ss",
-          "lineSep": "\r\n",
-          "treatEmptyValuesAsNulls": true,
-          "addColorColumns": false,
-          "maxRowsInMemory": 20,
-          "excerptSize": 10,
-          "mode": "PERMISSIVE",
-          "columnNameOfCorruptRecord": "corrupt_record"
-        },
-        "schema": [
-          {
-            "name": "json_payload",
-            "type": "string"
-          },
-          {
-            "name": "corrupt_record",
-            "type": "string"
-          }
-        ],
-        "dependent_on": []
-      },
-      {
-        "name": "add_lineage_metadata_obj570",
-        "transformation": "Expression",
-        "dependent_on": [
-          "landing_read_cinqdownstate_20260428_obj570"
-        ],
-        "derived_fields": [
-          {
-            "name": "feed_name",
-            "expression": "'filname_test_4'"
-          },
-          {
-            "name": "ingest_ts",
-            "expression": "current_timestamp()"
-          },
-          {
-            "name": "ingest_year",
-            "expression": "year(current_date())"
-          },
-          {
-            "name": "ingest_month",
-            "expression": "month(current_date())"
-          },
-          {
-            "name": "ingest_day",
-            "expression": "day(current_date())"
-          },
-          {
-            "name": "created_ts",
-            "expression": "current_timestamp()"
-          },
-          {
-            "name": "updated_ts",
-            "expression": "current_timestamp()"
-          },
-          {
-            "name": "batch_id",
-            "expression": "batch_id"
-          }
-        ]
-      },
-      {
-        "name": "schema_drift_guard_obj570",
-        "transformation": "SchemaDriftGuard",
-        "dependent_on": [
-          "add_lineage_metadata_obj570"
-        ],
-        "schema_version": "v1",
-        "rescued_column": "_rescued_data",
-        "raw_record_column": "_raw_record",
-        "detect_only": true,
-        "version": "1.0.0",
-        "engine_type": "pyspark",
-        "expected_schema": [
-          {
-            "name": "json_payload",
-            "type": "string",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "corrupt_record",
-            "type": "string",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "batch_id",
-            "type": "string",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "feed_name",
-            "type": "string",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "ingest_ts",
-            "type": "timestamp",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "ingest_year",
-            "type": "integer",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "ingest_month",
-            "type": "integer",
-            "nullable": true,
-            "is_required": false
-          },
-          {
-            "name": "ingest_day",
-            "type": "integer",
-            "nullable": true,
-            "is_required": false
-          }
-        ],
-        "dataset_id": "cinqdownstate_20260428",
-        "drift_policy": {
-          "new_column": "rescue",
-          "missing_required_column": "fail_batch",
-          "type_mismatch_required": "quarantine_record",
-          "type_mismatch_optional": "rescue"
-        }
-      },
-      {
-        "name": "bronze_write_cinqdownstate_20260428_obj570",
-        "transformation": "Writer",
-        "dependent_on": [
-          "schema_drift_guard_obj570"
-        ],
-        "target": {
-          "$ref": "#/targets/bronze_target_cinqdownstate_20260428_obj570"
-        },
-        "write_options": {
-          "truncate": false,
-          "cascadeTruncate": false,
-          "refreshKrb5Config": false,
-          "encrypt": "false",
-          "trustServerCertificate": "false",
-          "partitionBy": [
-            "ingest_year",
-            "ingest_month",
-            "ingest_day",
-            "batch_id"
-          ]
-        }
-      },
       {
         "name": "landing_read_cinqupstate_20260429_obj571",
         "transformation": "Reader",
@@ -388,6 +220,118 @@
             "batch_id"
           ]
         }
+      },
+      {
+        "name": "landing_read_cinqdownstate_20260428_obj570",
+        "transformation": "Reader",
+        "source": {
+          "$ref": "#/sources/landing_source_cinqdownstate_20260428_obj570"
+        },
+        "file_type": "Excel",
+        "read_options": {
+          "fetch_size": 10000,
+          "inferSchema": false,
+          "sheetName": "Sheet1",
+          "sheet_name": "Sheet1",
+          "useHeader": true,
+          "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+          "lineSep": "\r\n",
+          "treatEmptyValuesAsNulls": true,
+          "addColorColumns": false,
+          "maxRowsInMemory": 20,
+          "excerptSize": 10,
+          "mode": "PERMISSIVE",
+          "columnNameOfCorruptRecord": "corrupt_record"
+        },
+        "dependent_on": []
+      },
+      {
+        "name": "add_lineage_metadata_obj570",
+        "transformation": "Expression",
+        "dependent_on": [
+          "landing_read_cinqdownstate_20260428_obj570"
+        ],
+        "derived_fields": [
+          {
+            "name": "feed_name",
+            "expression": "'filname_test_4'"
+          },
+          {
+            "name": "ingest_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "ingest_year",
+            "expression": "year(current_date())"
+          },
+          {
+            "name": "ingest_month",
+            "expression": "month(current_date())"
+          },
+          {
+            "name": "ingest_day",
+            "expression": "day(current_date())"
+          },
+          {
+            "name": "created_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "updated_ts",
+            "expression": "current_timestamp()"
+          },
+          {
+            "name": "corrupt_record",
+            "expression": "cast(null as string)"
+          },
+          {
+            "name": "batch_id",
+            "expression": "batch_id"
+          }
+        ]
+      },
+      {
+        "name": "schema_drift_guard_obj570",
+        "transformation": "SchemaDriftGuard",
+        "dependent_on": [
+          "add_lineage_metadata_obj570"
+        ],
+        "schema_version": "v1",
+        "rescued_column": "_rescued_data",
+        "raw_record_column": "_raw_record",
+        "detect_only": true,
+        "version": "1.0.0",
+        "engine_type": "pyspark",
+        "dataset_id": "cinqdownstate_20260428",
+        "drift_policy": {
+          "new_column": "rescue",
+          "missing_required_column": "fail_batch",
+          "type_mismatch_required": "quarantine_record",
+          "type_mismatch_optional": "rescue"
+        }
+      },
+      {
+        "name": "bronze_write_cinqdownstate_20260428_obj570",
+        "transformation": "Writer",
+        "dependent_on": [
+          "schema_drift_guard_obj570"
+        ],
+        "target": {
+          "$ref": "#/targets/bronze_target_cinqdownstate_20260428_obj570"
+        },
+        "write_options": {
+          "truncate": false,
+          "cascadeTruncate": false,
+          "refreshKrb5Config": false,
+          "encrypt": "false",
+          "trustServerCertificate": "false",
+          "partitionBy": [
+            "ingest_year",
+            "ingest_month",
+            "ingest_day",
+            "batch_id"
+          ]
+        }
       }
     ],
     "description": "Cloned from File to DB Ingestion V2",
@@ -418,14 +362,14 @@
       },
       "stage_to_transformations": {
         "bronze": [
-          "landing_read_cinqdownstate_20260428_obj570",
-          "add_lineage_metadata_obj570",
-          "schema_drift_guard_obj570",
-          "bronze_write_cinqdownstate_20260428_obj570",
           "landing_read_cinqupstate_20260429_obj571",
           "add_lineage_metadata_obj571",
           "schema_drift_guard_obj571",
-          "bronze_write_cinqupstate_20260429_obj571"
+          "bronze_write_cinqupstate_20260429_obj571",
+          "landing_read_cinqdownstate_20260428_obj570",
+          "add_lineage_metadata_obj570",
+          "schema_drift_guard_obj570",
+          "bronze_write_cinqdownstate_20260428_obj570"
         ]
       },
       "error_threshold_pct": 50.0,
@@ -433,7 +377,7 @@
       "atomic_commit_enabled": true,
       "group_id": 243,
       "expected_group_members": 2,
-      "group_run_id": "filname_test_4_20260601T064218Z"
+      "group_run_id": "filname_test_4_20260601T072111Z"
     }
   },
   "pipeline_type": "design",
