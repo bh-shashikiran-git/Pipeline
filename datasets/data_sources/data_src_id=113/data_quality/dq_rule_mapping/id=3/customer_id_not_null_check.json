@@ -1,0 +1,143 @@
+{
+  "id": 3,
+  "rule_definition_id": 30,
+  "rule_id_backup": 28,
+  "data_source_id": 113,
+  "dq_asset_id": null,
+  "name": "Customer ID Not Null Check",
+  "description": "Ensures customer_id is not null or empty",
+  "is_active": true,
+  "tags": {},
+  "action": null,
+  "treatment_expression": null,
+  "created_at": "2026-09-16T10:07:48.517807Z",
+  "updated_at": "2026-09-16T10:07:48.517807Z",
+  "created_by": "kiranreddy@local.dev",
+  "updated_by": "kiranreddy@local.dev",
+  "is_deleted": false,
+  "deleted_by": null,
+  "tenant_id": 1,
+  "rule_template": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM {database_name}.{schema_name}.{table_name} WHERE ({column_name} IS NULL OR {column_name} = '') AND {additional_filters}), overall_count AS (SELECT COUNT(*) AS total_rows FROM {database_name}.{schema_name}.{table_name} WHERE {additional_filters}) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= {tolerance(%)} THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+  "parent_type": "data_source",
+  "parent_id": 113,
+  "parent_name": "customers",
+  "_graph": {
+    "root": {
+      "model": "DqRuleMapping",
+      "pk": 3
+    },
+    "nodes": [
+      {
+        "model": "DqRuleMapping",
+        "pk": 3,
+        "data": {
+          "id": 3,
+          "rule_definition_id": 30,
+          "rule_id_backup": 28,
+          "data_source_id": 113,
+          "dq_asset_id": null,
+          "name": "Customer ID Not Null Check",
+          "description": "Ensures customer_id is not null or empty",
+          "is_active": true,
+          "tags": {},
+          "action": null,
+          "treatment_expression": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 18,
+        "data": {
+          "id": 18,
+          "rule_mapping_id": 3,
+          "parameter_id": 171,
+          "value": "1=1",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 17,
+        "data": {
+          "id": 17,
+          "rule_mapping_id": 3,
+          "parameter_id": 172,
+          "value": "0",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 16,
+        "data": {
+          "id": 16,
+          "rule_mapping_id": 3,
+          "parameter_id": 170,
+          "value": "customer_id",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 15,
+        "data": {
+          "id": 15,
+          "rule_mapping_id": 3,
+          "parameter_id": 168,
+          "value": "public",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 14,
+        "data": {
+          "id": 14,
+          "rule_mapping_id": 3,
+          "parameter_id": 169,
+          "value": "customers",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      },
+      {
+        "model": "DqParameterMapping",
+        "pk": 13,
+        "data": {
+          "id": 13,
+          "rule_mapping_id": 3,
+          "parameter_id": 167,
+          "value": "sample_db",
+          "is_active": true,
+          "tags": null,
+          "tenant_id": 1,
+          "is_deleted": false,
+          "deleted_by": null
+        }
+      }
+    ]
+  },
+  "rule_substituted": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (customer_id IS NULL OR customer_id = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;"
+}
