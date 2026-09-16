@@ -1,0 +1,162 @@
+{
+  "data_source_id": 113,
+  "data_src_name": "customers",
+  "dq_rules": [
+    {
+      "dq_rule_mapping_id": 2,
+      "rule_id": 28,
+      "rule_definition_id": 30,
+      "action": "RECORD",
+      "data_source_id": 113,
+      "data_src_name": "customers",
+      "rule_name": "Contact Name Not Null or Empty",
+      "evaluation_scope": "ROW",
+      "rule_type": "NOT_NULL",
+      "parameter_values": {
+        "database_name": "sample_db",
+        "table_name": "customers",
+        "schema_name": "public",
+        "column_name": "contact_name",
+        "tolerance(%)": "0",
+        "additional_filters": "1=1"
+      },
+      "engines": {
+        "ansi": {
+          "engine": "ansi",
+          "rule_definition_id": 30,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (contact_name IS NULL OR contact_name = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (contact_name IS NULL OR TRIM(CAST(contact_name AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        },
+        "spark": {
+          "engine": "spark",
+          "rule_definition_id": 37,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (contact_name IS NULL OR contact_name = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (contact_name IS NULL OR TRIM(CAST(contact_name AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        }
+      }
+    },
+    {
+      "dq_rule_mapping_id": 3,
+      "rule_id": 28,
+      "rule_definition_id": 30,
+      "action": "RECORD",
+      "data_source_id": 113,
+      "data_src_name": "customers",
+      "rule_name": "Customer ID Not Null Check",
+      "evaluation_scope": "ROW",
+      "rule_type": "NOT_NULL",
+      "parameter_values": {
+        "database_name": "sample_db",
+        "table_name": "customers",
+        "schema_name": "public",
+        "column_name": "customer_id",
+        "tolerance(%)": "0",
+        "additional_filters": "1=1"
+      },
+      "engines": {
+        "ansi": {
+          "engine": "ansi",
+          "rule_definition_id": 30,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (customer_id IS NULL OR customer_id = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (customer_id IS NULL OR TRIM(CAST(customer_id AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        },
+        "spark": {
+          "engine": "spark",
+          "rule_definition_id": 37,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (customer_id IS NULL OR customer_id = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (customer_id IS NULL OR TRIM(CAST(customer_id AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        }
+      }
+    },
+    {
+      "dq_rule_mapping_id": 4,
+      "rule_id": 28,
+      "rule_definition_id": 30,
+      "action": "RECORD",
+      "data_source_id": 113,
+      "data_src_name": "customers",
+      "rule_name": "Customer ID Not Null Check",
+      "evaluation_scope": "ROW",
+      "rule_type": "NOT_NULL",
+      "parameter_values": {
+        "database_name": "sample_db",
+        "table_name": "customers",
+        "schema_name": "public",
+        "column_name": "customer_id",
+        "tolerance(%)": "0",
+        "additional_filters": "1=1"
+      },
+      "engines": {
+        "ansi": {
+          "engine": "ansi",
+          "rule_definition_id": 30,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (customer_id IS NULL OR customer_id = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (customer_id IS NULL OR TRIM(CAST(customer_id AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        },
+        "spark": {
+          "engine": "spark",
+          "rule_definition_id": 37,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (customer_id IS NULL OR customer_id = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (customer_id IS NULL OR TRIM(CAST(customer_id AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        }
+      }
+    },
+    {
+      "dq_rule_mapping_id": 5,
+      "rule_id": 28,
+      "rule_definition_id": 30,
+      "action": "RECORD",
+      "data_source_id": 113,
+      "data_src_name": "customers",
+      "rule_name": "Address Not Null or Empty",
+      "evaluation_scope": "ROW",
+      "rule_type": "NOT_NULL",
+      "parameter_values": {
+        "database_name": "sample_db",
+        "table_name": "customers",
+        "schema_name": "public",
+        "column_name": "address",
+        "tolerance(%)": "0",
+        "additional_filters": "1=1"
+      },
+      "engines": {
+        "ansi": {
+          "engine": "ansi",
+          "rule_definition_id": 30,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (address IS NULL OR address = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (address IS NULL OR TRIM(CAST(address AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        },
+        "spark": {
+          "engine": "spark",
+          "rule_definition_id": 37,
+          "substituted_query": "WITH null_count AS (SELECT COUNT(*) AS total_nulls FROM sample_db.public.customers WHERE (address IS NULL OR address = '') AND 1=1), overall_count AS (SELECT COUNT(*) AS total_rows FROM sample_db.public.customers WHERE 1=1) SELECT total_rows AS rows_total, (total_rows - total_nulls) AS rows_passed, total_nulls AS rows_failed, CASE WHEN try_divide((total_rows - total_nulls) * 100.0, total_rows) >= 0 THEN 'PASS' ELSE 'FAIL' END AS status FROM null_count, overall_count;",
+          "failure_predicate": "(1=1) AND (address IS NULL OR TRIM(CAST(address AS STRING)) = '')",
+          "referential": null,
+          "uniqueness": null,
+          "stage_filter": null
+        }
+      }
+    }
+  ]
+}
